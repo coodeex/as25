@@ -18,4 +18,4 @@ COPY . .
 EXPOSE 3000
 
 # the command that starts our app
-CMD ["yarn", "start"]
+CMD ["yarn", "dev", "--", "--host"]
