@@ -8,6 +8,14 @@ services:
             - "5000:5000"
         volumes:
             - ./server:/usr/src/app
+    client:
+        restart: always
+        build:
+            context: ./client
+        ports:
+            - "3000:3000"
+        volumes:
+            - ./client:/usr/src/client
     nginx:
         restart: always
         build:
