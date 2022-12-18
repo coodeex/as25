@@ -1,10 +1,13 @@
 version: "3.8"
 services:
     nodeserver:
+        restart: always
         build:
             context: ./server
         ports:
             - "5000:5000"
+        volumes:
+            - ./server:/usr/src/app
     nginx:
         restart: always
         build:

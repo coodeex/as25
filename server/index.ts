@@ -1,8 +1,8 @@
-// index.js
-const express = require('express');
+import express from 'express';
+
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hello jes!')
+  res.send('Hello ts!')
 })
 app.get('/r', (req, res) => {
   res.send('Hello r!')
