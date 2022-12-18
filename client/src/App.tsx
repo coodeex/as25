@@ -1,19 +1,14 @@
 import './App.css';
 
-import styled from 'styled-components';
-
-import { Nav } from './components/nav';
+import { R } from './api/Api';
 
 function App() {
   return (
     <div>
-      <Nav />
+      {/* <Nav /> */}
+      <R />
     </div>
   );
 }
-
-const Div = styled.div`
-  padding: 300px;
-`;
 
 export default App;
