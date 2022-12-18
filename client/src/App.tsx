@@ -1,12 +1,13 @@
 import './App.css';
 
-import { R } from './api/Api';
+import { My, R } from './api/Api';
 
 function App() {
   return (
     <div>
       {/* <Nav /> */}
       <R />
+      <My />
     </div>
   );
 }
