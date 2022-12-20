@@ -2,6 +2,8 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 
+import { error } from '../components/util/error';
+
 const ax = axios.create({
   baseURL: '/api',
   timeout: 5000,
@@ -34,6 +36,11 @@ export const usePost = (url: string, data: any) => {
   return res;
 };
 
+export const Home = () => {
+  const data = useGet('');
+  return <div>{data}</div>;
+};
+
 export const R = () => {
   const data = useGet('r');
   return <div>{data}</div>;
@@ -53,10 +60,7 @@ export function My() {
       .then((res) => {
         toast.success(res.data);
       })
-      .catch((error) => {
-        console.log('err: ', error.response.status);
-        toast.error('error');
-      });
+      .catch(error);
   };
 
   return (

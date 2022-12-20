@@ -1,12 +1,13 @@
 import './App.css';
 
-import { My, R } from './api/Api';
+import { Home, My, R } from './api/Api';
 import { HotToast } from './components/HotToast';
 
 function App() {
   return (
     <div>
       {/* <Nav /> */}
+      <Home />
       <R />
       <My />
       <HotToast />
