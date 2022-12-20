@@ -1,6 +1,7 @@
 import './App.css';
 
 import { My, R } from './api/Api';
+import { HotToast } from './components/HotToast';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       {/* <Nav /> */}
       <R />
       <My />
+      <HotToast />
     </div>
   );
 }

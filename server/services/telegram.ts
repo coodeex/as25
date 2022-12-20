@@ -13,6 +13,10 @@ export const sendMessage = async (message: string | undefined) => {
     return;
   }
 
-  await bot.sendMessage(chatId, message);
+  blueLog(message);
+
+  // TODO save to db
+
+  // await bot.sendMessage(chatId, message);
   console.log('message sent');
 };

@@ -3,3 +3,7 @@ export const sleep = (ms: number) => {
     setTimeout(resolve, ms);
   });
 };
+
+export const wait = async () => {
+  await sleep(1000);
+};

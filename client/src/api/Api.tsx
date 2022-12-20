@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-
-import { sleep } from '../components/util/sleep';
+import toast from 'react-hot-toast';
 
 const ax = axios.create({
   baseURL: '/api',
@@ -46,33 +45,23 @@ export const Tg = () => {
 };
 
 export function My() {
-  const [response, setResponse] = useState(null);
-
   const handleClick = () => {
     axios
       .post('/api/tg', {
-        // message: 'Helou!',
+        message: 'Helou!',
       })
       .then((res) => {
-        setResponse(res.data);
+        toast.success(res.data);
       })
       .catch((error) => {
-        console.log(error);
+        console.log('err: ', error.response.status);
+        toast.error('error');
       });
   };
-
-  useEffect(() => {
-    const wait = async () => {
-      await sleep(1000);
-      setResponse(null);
-    };
-    wait();
-  }, [response]);
 
   return (
     <div>
       <button onClick={handleClick}>Make POST Request</button>
-      {response && <p>{response}</p>}
     </div>
   );
 }
