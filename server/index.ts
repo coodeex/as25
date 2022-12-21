@@ -7,32 +7,37 @@ import koaRouter from 'koa-joi-router';
 import bodyParser from 'koa-bodyparser';
 import { routes } from './core/routes';
 import { joiError } from './core/util/error';
+import { initDataSource } from './core/infra/datasource';
 
-const app = new Koa();
-const router = koaRouter();
-const Joi = koaRouter.Joi;
-app.use(bodyParser());
+initDataSource
+  .then(() => {
+    const app = new Koa();
+    const router = koaRouter();
+    const Joi = koaRouter.Joi;
+    app.use(bodyParser());
 
-app.use(async (ctx, next) => {
-  try {
-    await next();
-  } catch (err) {
-    joiError(ctx, err);
-  }
-});
+    app.use(async (ctx, next) => {
+      try {
+        await next();
+      } catch (err) {
+        joiError(ctx, err);
+      }
+    });
 
-app.use(async (ctx, next) => {
-  await next();
-  const rt = ctx.response.get('X-Response-Time');
-  console.log(`${ctx.method} ${ctx.url} - ${rt}`); // log query
-});
+    app.use(async (ctx, next) => {
+      await next();
+      const rt = ctx.response.get('X-Response-Time');
+      console.log(`${ctx.method} ${ctx.url} - ${rt}`); // log query
+    });
 
-router.route(routes);
-app.use(router.middleware());
+    router.route(routes);
+    app.use(router.middleware());
 
-// TODO check router.allowedMethods
+    // TODO check router.allowedMethods
 
-const PORT = 5000;
-app.listen(PORT, () =>
-  console.log(`Server is up and running at http://localhost:${PORT}`),
-);
+    const PORT = 5000;
+    app.listen(PORT, () =>
+      console.log(`Server is up and running at http://localhost:${PORT}`),
+    );
+  })
+  .catch((error) => console.log(error));

@@ -1,4 +1,4 @@
-import { Context } from 'koa';
+import { Ctx } from '../types/koa';
 import { redLog } from './colorLog';
 
 type Error = {
@@ -11,7 +11,7 @@ const asErrors = <T>(e: { [K in keyof T]: Error }) => e;
 type Expose = 'expose' | 'no exposing';
 
 export const error = (
-  ctx: Context,
+  ctx: Ctx,
   error: Error,
   expose: Expose = 'no exposing', // if 'expose', we send the error message in the response
   log?: string | undefined,
@@ -29,11 +29,15 @@ export const errors = asErrors({
     message: 'no db',
     httpStatus: 500,
   },
+  saveMessage: {
+    message: 'message saving error',
+    httpStatus: 500,
+  },
 });
 
 // for request validation Joi is used and can be added in routes validate object
 // this handles validation errors
-export const joiError = (ctx: Context, err: any) => {
+export const joiError = (ctx: Ctx, err: any) => {
   if (err && err._original && err.status && err.msg) {
     ctx.status = err.status;
     ctx.body = { message: err.msg, error: 'validation error' };

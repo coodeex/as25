@@ -1,11 +1,11 @@
-import { Context } from 'koa';
 import { Joi } from 'koa-joi-router';
-import { sendMessage } from './services/telegram';
+import { getMessages, sendMessage } from './services/telegram';
+import { Ctx } from './types/koa';
 
 type Route = {
   path: string;
   method: string;
-  handler: (context: Context) => Promise<void>;
+  handler: (context: Ctx) => Promise<void>;
   validate?: any;
 };
 
@@ -23,6 +23,11 @@ export const routes: Route[] = [
     handler: async (ctx) => {
       ctx.body = 'hello r';
     },
+  },
+  {
+    path: '/tg',
+    method: 'get',
+    handler: getMessages,
   },
   {
     path: '/tg',

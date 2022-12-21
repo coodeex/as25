@@ -1,0 +1,18 @@
+access database
+sudo docker exec -it $(sudo docker ps | awk '{if($12=="jrm_database")  print $1}') psql -U postgres
+
+or
+
+sudo docker exec -it $(sudo docker ps | awk '{if($2=="postgres:14.1-alpine") print $1}' | head -1) psql -U postgres
+
+list db containers
+echo "$(sudo docker ps | awk '{if($2=="postgres:14.1-alpine") print $1}')"
+
+
+
+delete local db 
+docker-compose down --volumes
+
+and after that 
+docker-compose down
+uses init.sql to create database again

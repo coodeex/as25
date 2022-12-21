@@ -10,7 +10,7 @@ const ax = axios.create({
   headers: { 'X-Custom-Header': 'foobar' },
 });
 
-const useGet = (url: string) => {
+export const useGet = (url: string) => {
   const [data, setData] = useState('...');
 
   useEffect(() => {
