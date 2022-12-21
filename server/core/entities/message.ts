@@ -2,14 +2,14 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Message {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @Column({
     length: 100,
   })
   msg: string;
 
-  //   @Column('text')
-  //   sender: string;
+  @Column()
+  sender: string;
 }
