@@ -1,5 +1,5 @@
 import { Context } from 'koa';
-import { redLog } from './util/colorLog';
+import { redLog } from './colorLog';
 
 type Error = {
   message: string;
@@ -8,10 +8,18 @@ type Error = {
 
 const asErrors = <T>(e: { [K in keyof T]: Error }) => e;
 
-export const error = (ctx: Context, error: Error, log?: string | undefined) => {
+type Expose = 'expose' | 'no exposing';
+
+export const error = (
+  ctx: Context,
+  error: Error,
+  expose: Expose = 'no exposing', // if 'expose', we send the error message in the response
+  log?: string | undefined,
+) => {
   redLog(`${error.message} ${log ? log : ''}`);
   ctx.status = error.httpStatus;
-  ctx.body = error.message;
+  ctx.body = {};
+  if (expose === 'expose') ctx.body = error.message;
   throw new Error(error.message);
 };
 
