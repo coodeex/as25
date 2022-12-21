@@ -6,16 +6,19 @@ import Koa from 'koa';
 import koaRouter from 'koa-joi-router';
 import bodyParser from 'koa-bodyparser';
 import { routes } from './core/routes';
+import { joiError } from './core/util/error';
 
 const app = new Koa();
 const router = koaRouter();
 const Joi = koaRouter.Joi;
 app.use(bodyParser());
 
-app.use(async (_, next) => {
+app.use(async (ctx, next) => {
   try {
     await next();
-  } catch (err) {}
+  } catch (err) {
+    joiError(ctx, err);
+  }
 });
 
 app.use(async (ctx, next) => {
@@ -28,7 +31,6 @@ router.route(routes);
 app.use(router.middleware());
 
 // TODO check router.allowedMethods
-// TODO add Joi
 
 const PORT = 5000;
 app.listen(PORT, () =>

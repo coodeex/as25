@@ -23,9 +23,23 @@ export const error = (
   throw new Error(error.message);
 };
 
+// errors used in services
 export const errors = asErrors({
-  noMessage: {
-    message: 'no message',
-    httpStatus: 400,
+  noDb: {
+    message: 'no db',
+    httpStatus: 500,
   },
 });
+
+// for request validation Joi is used and can be added in routes validate object
+// this handles validation errors
+export const joiError = (ctx: Context, err: any) => {
+  if (err && err._original && err.status && err.msg) {
+    ctx.status = err.status;
+    ctx.body = { message: err.msg, error: 'validation error' };
+  } else {
+    ctx.status = 500;
+    ctx.body = { message: 'joi error', error: 'internal error' };
+  }
+  redLog(err);
+};
