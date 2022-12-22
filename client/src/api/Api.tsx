@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 
+import { Button } from '../components/common/Button';
 import { error } from '../components/util/error';
 
 const ax = axios.create({
@@ -65,7 +66,7 @@ export function My() {
 
   return (
     <div>
-      <button onClick={handleClick}>Make POST Request</button>
+      <Button onClick={handleClick}>Make POST Request</Button>
     </div>
   );
 }

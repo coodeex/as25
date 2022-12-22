@@ -28,6 +28,7 @@ export const sendMessage = async (ctx: Ctx) => {
   blueLog('message.id');
   blueLog(message.id);
   message.msg = msg;
+  message.sender = 'unknown';
 
   await AppDataSource.manager.save(message);
   if (!message.id) {
