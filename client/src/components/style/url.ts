@@ -10,7 +10,7 @@ export function useUrlState() {
         (key: string, val: number | string) => {
           const v = val.toString();
           setUrlParam(key, v);
-          setState((p) => ({ ...p, [key]: v }));
+          setState(p => ({ ...p, [key]: v }));
         },
       ] as const,
     [state],

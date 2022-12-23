@@ -16,7 +16,7 @@ export const ComponentSandbox = () => {
 };
 
 const CoolDiv = styled.div`
-  background-color: ${(p) => p.theme.colors.primary};
-  padding: ${(p) => p.theme.spacing.medium}px;
+  background-color: ${p => p.theme.colors.primary};
+  padding: ${p => p.theme.spacing.medium}px;
   width: min-content;
 `;

@@ -66,7 +66,7 @@ const getCSS = (p: ThemedProps) => [
 const StackBase = styled.div<TransientProps>`
   display: flex;
   ${getCSS}
-  ${(p) => getResponsiveCSS(p, getCSS)}
+  ${p => getResponsiveCSS(p, getCSS)}
 `;
 
 export default function Stack({ children, ...props }: Props) {

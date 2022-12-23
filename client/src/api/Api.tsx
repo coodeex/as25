@@ -58,7 +58,7 @@ export function My() {
       .post('/api/tg', {
         message: 'Helou!',
       })
-      .then((res) => {
+      .then(res => {
         toast.success(res.data);
       })
       .catch(error);
