@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import Stack from '../Stack';
 import { Button } from './Button';
+import { ShadowButton } from './ShadowButton';
 
 export const ComponentSandbox = () => {
   return (
@@ -11,6 +12,10 @@ export const ComponentSandbox = () => {
         <Button>button2</Button>
       </Stack>
       <CoolDiv>jea</CoolDiv>
+      <Stack axis="x" spacing="medium">
+        <div></div>
+        <ShadowButton />
+      </Stack>
     </Stack>
   );
 };
