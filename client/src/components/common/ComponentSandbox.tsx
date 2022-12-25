@@ -1,10 +1,13 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 
 import Stack from '../Stack';
 import { Button } from './Button';
-import { ShadowButton } from './ShadowButton';
+import ShadowButton from './ShadowButton';
 
 export const ComponentSandbox = () => {
+  const [loading, setLoading] = useState(false);
+
   return (
     <Stack axis="y" spacing="medium">
       <Stack axis="x" spacing="medium">
@@ -14,7 +17,9 @@ export const ComponentSandbox = () => {
       <CoolDiv>jea</CoolDiv>
       <Stack axis="x" spacing="medium">
         <div></div>
-        <ShadowButton />
+        <ShadowButton loading={loading} onClick={() => setLoading(!loading)}>
+          Hello
+        </ShadowButton>
       </Stack>
     </Stack>
   );

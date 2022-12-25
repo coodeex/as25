@@ -1,10 +1,34 @@
+import { ButtonHTMLAttributes, forwardRef, ReactNode } from 'react';
 import styled from 'styled-components';
 
-export const ShadowButton = () => {
-  return <Button>Hello</Button>;
+import Spinner from '../Spinner';
+import Stack from '../Stack';
+
+export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  children: ReactNode;
+  disabled?: boolean;
+  loading?: boolean;
+  onClick?: () => any;
 };
 
-const Button = styled.button`
+const ShadowButton = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ children, loading, ...rest }, ref) => {
+    return (
+      <Button {...rest} ref={ref}>
+        <Stack axis="x" spacing="small" align="center">
+          {loading && <Spinner color="primary" size="medium" />}
+          <span>{children}</span>
+        </Stack>
+      </Button>
+    );
+  },
+);
+
+ShadowButton.displayName = 'ShadowButton';
+
+export default ShadowButton;
+
+const Button = styled.button<{ disabled?: boolean | undefined }>`
   text-decoration: none;
   border: none;
   font-family: inherit;
@@ -12,10 +36,13 @@ const Button = styled.button`
   background: linear-gradient(90deg, #170490, #b02775, #831496, #170490);
   background-size: 300%;
   border-radius: 30px;
+  transition: box-shadow 0.5s ease-out;
+  :hover {
+    ${p => p.disabled && 'cursor: not-allowed'}
+  }
   :hover {
     animation: ani 8s linear infinite;
     border: none;
-    transition: box-shadow 0.5s ease-out;
     box-shadow: 0 0 0px 0px #fff, 0px 3px 30px 1px #f0f, 0px -1px 40px 2px #0ff;
   }
   @keyframes ani {
@@ -29,7 +56,7 @@ const Button = styled.button`
   }
 
   :active {
-    background: linear-gradient(32deg, #170490, #b02775, #831496);
+    ${p => !p.disabled && 'background: linear-gradient(32deg, #0f016a, #741a4d, #4b0b57)'}
   }
 `;
 
