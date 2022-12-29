@@ -1,17 +1,19 @@
 import './App.css';
 
 import { Route, Routes } from 'react-router-dom';
+import styled from 'styled-components';
 
 import { Home, R } from './api/Api';
 import { ComponentSandbox } from './components/common/ComponentSandbox';
 import { NoMatch } from './components/common/NoMatch';
 import { HotToast } from './components/HotToast';
 import { Navigation } from './components/nav/Navigation';
+import { theme } from './components/style/theme';
 import { Chat } from './components/telegram/Chat';
 
 const App = () => {
   return (
-    <div>
+    <PageWrapper>
       {/* <Nav /> */}
       <Routes>
         <Route path="/" element={<Navigation />}>
@@ -24,8 +26,13 @@ const App = () => {
         </Route>
       </Routes>
       <HotToast />
-    </div>
+    </PageWrapper>
   );
 };
 
+const PageWrapper = styled.div`
+  background-color: ${p => theme.colors.background};
+  height: 100vh;
+  width: 100vw;
+`;
 export default App;

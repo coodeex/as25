@@ -1,0 +1,18 @@
+:root {
+  --in-out-transition-time: 300ms;
+}
+
+.in-out-transition-enter {
+  opacity: 0;
+}
+.in-out-transition-enter-active {
+  opacity: 1;
+  transition: opacity var(--in-out-transition-time) ease-in-out;
+}
+.in-out-transition-exit {
+  opacity: 1;
+}
+.in-out-transition-exit-active {
+  opacity: 0;
+  transition: opacity var(--in-out-transition-time) ease-in-out;
+}

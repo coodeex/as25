@@ -40,7 +40,7 @@ const lightColors = {
   backdrop: 'rgba(0,0,0,0.5)', // modal backdrop etc.
   surface: '#FFFFFF', // cards, sidebars, navbars, etc.
   elevated: '#FFFFFF', // modals, drawers, etc.
-  background: '#F3F4F6', // app main background
+  background: '#161616', // app main background
 };
 
 // TODO: fine-tune dark mode colors (eg. update vibrancy)
