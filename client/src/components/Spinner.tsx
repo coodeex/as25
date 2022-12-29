@@ -6,7 +6,7 @@ import { absoluteFill } from './style/utils';
 type Size = 'small' | 'normal' | 'medium' | 'large';
 
 type Props = {
-  color: Color | 'currentColor';
+  color?: Color;
   size?: Size;
 };
 
@@ -32,7 +32,7 @@ const Spinner = styled.div<Props>`
   position: relative;
   width: ${p => sizes[p.size || 'normal']}px;
   height: ${p => sizes[p.size || 'normal']}px;
-  color: ${p => (p.color === 'currentColor' ? 'currentColor' : p.theme.colors[p.color])};
+  color: ${p => (p.color ? p.theme.colors[p.color] : p.theme.colors.primary)};
 
   &:before {
     content: '';

@@ -12,7 +12,7 @@ const ax = axios.create({
 });
 
 export const useGet = (url: string) => {
-  const [data, setData] = useState('...');
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {

@@ -3,7 +3,7 @@ import { Message } from '../entities/message';
 import { AppDataSource } from '../infra/datasource';
 import { Ctx } from '../types/koa';
 import { blueLog } from '../util/colorLog';
-import { error, errors } from '../util/error';
+import { sleep } from '../util/sleep';
 
 const TOKEN = process.env.TG_API_KEY || '';
 const chatId = process.env.TG_CHANNEL_ID || '';
@@ -41,6 +41,7 @@ export const sendMessage = async (ctx: Ctx) => {
 };
 
 export const getMessages = async (ctx: Ctx) => {
+  await sleep(700);
   const msgRepository = AppDataSource.getRepository(Message);
   ctx.body = await msgRepository.find();
 };
