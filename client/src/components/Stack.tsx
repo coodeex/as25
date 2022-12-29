@@ -69,6 +69,8 @@ const StackBase = styled.div<TransientProps>`
   ${p => getResponsiveCSS(p, getCSS)}
 `;
 
-export default function Stack({ children, ...props }: Props) {
+const Stack = ({ children, ...props }: Props) => {
   return <StackBase {...parseProps(props, ownProps)}>{children}</StackBase>;
-}
+};
+
+export default Stack;

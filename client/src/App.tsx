@@ -9,7 +9,7 @@ import { HotToast } from './components/HotToast';
 import { Navigation } from './components/nav/Navigation';
 import { Chat } from './components/telegram/Chat';
 
-function App() {
+const App = () => {
   return (
     <div>
       {/* <Nav /> */}
@@ -26,6 +26,6 @@ function App() {
       <HotToast />
     </div>
   );
-}
+};
 
 export default App;

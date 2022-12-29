@@ -14,14 +14,14 @@ type AuthContextValue = {
 
 const ThemingContext = createContext<undefined | AuthContextValue>(undefined);
 
-export function ThemingProvider({ children }: { children: ReactNode }) {
+export const ThemingProvider = ({ children }: { children: ReactNode }) => {
   const [persistedTheme, setCurrentTheme] = usePersistedState<CurrentTheme>('@app/theme'); // prettier-ignore
   const currentTheme = persistedTheme || (window as any).CURRENT_THEME || 'light' as CurrentTheme; // prettier-ignore
   const theme = currentTheme === 'light' ? lightTheme : darkTheme;
 
-  function toggleTheme() {
+  const toggleTheme = () => {
     setCurrentTheme(currentTheme === 'dark' ? 'light' : 'dark');
-  }
+  };
 
   useEffect(() => {
     const root = document.documentElement;
@@ -34,7 +34,7 @@ export function ThemingProvider({ children }: { children: ReactNode }) {
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </ThemingContext.Provider>
   );
-}
+};
 
 export const useTheming = () => {
   const context = useContext(ThemingContext);

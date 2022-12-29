@@ -52,7 +52,7 @@ export const Tg = () => {
   return data;
 };
 
-export function My() {
+export const My = () => {
   const handleClick = () => {
     axios
       .post('/api/tg', {
@@ -69,4 +69,4 @@ export function My() {
       <Button onClick={handleClick}>Make POST Request</Button>
     </div>
   );
-}
+};

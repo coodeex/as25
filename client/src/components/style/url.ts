@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 
-export function useUrlState() {
+export const useUrlState = () => {
   const [state, setState] = useState<{ [key: string]: string }>(() => getAllUrlParams());
 
   return useMemo(
@@ -15,9 +15,9 @@ export function useUrlState() {
       ] as const,
     [state],
   );
-}
+};
 
-export function getAllUrlParams() {
+export const getAllUrlParams = () => {
   const entries = new URLSearchParams(location.search).entries();
   const all: Record<string, string> = {};
 
@@ -26,14 +26,14 @@ export function getAllUrlParams() {
   }
 
   return all;
-}
+};
 
-export function getUrlParam(name: string) {
+export const getUrlParam = (name: string) => {
   const params = new URLSearchParams(location.search);
   return params.get(name);
-}
+};
 
-export function setUrlParam(key: string, value: number | string) {
+export const setUrlParam = (key: string, value: number | string) => {
   const params = new URLSearchParams(location.search);
 
   if (value) {
@@ -43,4 +43,4 @@ export function setUrlParam(key: string, value: number | string) {
   }
 
   history.replaceState({}, '', `${location.pathname}?${params}`);
-}
+};
