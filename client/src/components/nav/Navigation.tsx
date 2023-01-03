@@ -16,6 +16,9 @@ export const Navigation = () => {
           <li>
             <Link to="/components">Sandbox</Link>
           </li>
+          <li>
+            <Link to="/game">Game</Link>
+          </li>
         </ul>
       </nav>
 

@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { Home, R } from './api/Api';
 import { ComponentSandbox } from './components/common/ComponentSandbox';
 import { NoMatch } from './components/common/NoMatch';
+import { Game } from './components/game/Game';
 import { HotToast } from './components/HotToast';
 import { Navigation } from './components/nav/Navigation';
 import { theme } from './components/style/theme';
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="chat" element={<Chat />} />
           <Route path="route" element={<R />} />
           <Route path="components" element={<ComponentSandbox />} />
+          <Route path="game" element={<Game />} />
 
           <Route path="*" element={<NoMatch />} />
         </Route>
