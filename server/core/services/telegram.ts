@@ -7,8 +7,12 @@ import { sleep } from '../util/sleep';
 
 const TOKEN = process.env.TG_API_KEY || '';
 const chatId = process.env.TG_CHANNEL_ID || '';
+const env = process.env.NODE_ENV;
 
-const bot = new TelegramBot(TOKEN, { polling: true });
+let bot: TelegramBot | undefined;
+if (env === 'prod') {
+  bot = new TelegramBot(TOKEN, { polling: true });
+}
 
 export const sendMessage = async (ctx: Ctx) => {
   const body = ctx.request.body;
@@ -20,9 +24,9 @@ export const sendMessage = async (ctx: Ctx) => {
   //   return;
   // }
 
-  // TODO save to db
-
-  // await bot.sendMessage(chatId, message);
+  // if(bot){
+  //   await bot.sendMessage(chatId, message);
+  // }
 
   const message = new Message();
   blueLog('message.id');

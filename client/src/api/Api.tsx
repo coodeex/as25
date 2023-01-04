@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 
 import { Button } from '../components/common/Button';
+import Text from '../components/common/Text';
 import { error } from '../components/util/error';
 
 const ax = axios.create({
@@ -39,7 +40,11 @@ export const usePost = (url: string, data: any) => {
 
 export const Home = () => {
   const data = useGet('');
-  return <div>{data}</div>;
+  return (
+    <Text variant="title2" color="muted1">
+      {data}
+    </Text>
+  );
 };
 
 export const R = () => {
