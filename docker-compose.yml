@@ -26,8 +26,6 @@ services:
       context: ./client
     ports:
       - "3284:3284"
-    volumes:
-      - ./client:/usr/src/client
 
   nginx:
     restart: always
