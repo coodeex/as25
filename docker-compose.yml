@@ -9,6 +9,7 @@ services:
     volumes:
       - ./server:/usr/src/app
       - "./:/src"
+      - "/usr/src/app/node_modules" # TODO check if / ís needed to add at the end
     depends_on:
       - db
     environment:
@@ -28,6 +29,7 @@ services:
       - "3284:3284"
     volumes:
       - ./client:/usr/src/client
+      - "/usr/src/client/node_modules" # TODO check if / ís needed to add at the end
     command: npm run dev
 
   nginx:
