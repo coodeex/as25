@@ -5,6 +5,9 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   plugins: [react()],
   server: {
+    hmr: {
+      clientPort: 3284,
+    },
     watch: {
       usePolling: true,
     },

@@ -26,6 +26,9 @@ services:
       context: ./client
     ports:
       - "3284:3284"
+    volumes:
+      - ./client:/usr/src/client
+    command: npm run dev
 
   nginx:
     restart: always
