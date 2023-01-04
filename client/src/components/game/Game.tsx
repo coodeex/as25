@@ -5,63 +5,66 @@ const DONKEY_HEIGHT = 30;
 const DONKEY_WIDTH = 30;
 const GAME_HEIGHT = 500;
 const GAME_WIDTH = 700;
-const JUMP_HEIGHT = 200;
 const OBSTACLE_HEIGHT = 160;
 const OBSTACLE_WIDTH = 30;
+const JUMP_SPEED = 20;
+const GRAVITY = 1;
+const MINIMAL_JUMP_TIME = 3;
+const FRAME_RATE = 24;
 
 const donkeyGroundLevel = GAME_HEIGHT - DONKEY_HEIGHT;
 const obstacleGroundLevel = donkeyGroundLevel - OBSTACLE_HEIGHT;
 
 export const Game = () => {
   const [donkeyY, setDonkeyY] = useState(donkeyGroundLevel - 10);
-  const [goingUp, setGoingUp] = useState(false);
   const [obstacleX, setObstacleX] = useState(GAME_WIDTH);
   const [gameRunning, setGameRunning] = useState(false);
   const [score, setScore] = useState(0);
-
-  useEffect(() => {
-    if (donkeyY < JUMP_HEIGHT) setGoingUp(false);
-    if (donkeyY > donkeyGroundLevel) setDonkeyY(donkeyGroundLevel);
-  }, [donkeyY]);
+  const [jumped, setJumped] = useState(false);
+  const [jumpTime, setJumpTime] = useState(0);
 
   useEffect(() => {
     if (obstacleX <= DONKEY_WIDTH && donkeyY >= obstacleGroundLevel) {
       setGameRunning(false);
     }
-  }, [obstacleX]);
+  }, [donkeyY, obstacleX]);
 
   useEffect(() => {
     let xId: NodeJS.Timer;
     if (gameRunning && obstacleX > -OBSTACLE_WIDTH) {
       xId = setInterval(() => {
         setObstacleX(obstacleX - 5);
-      }, 24);
+      }, FRAME_RATE);
       return () => clearInterval(xId);
     } else if (gameRunning) {
       setObstacleX(GAME_WIDTH);
       setScore(score + 1);
     }
-  }, [obstacleX, gameRunning]);
+  }, [obstacleX, gameRunning, score]);
 
   useEffect(() => {
-    let downId: NodeJS.Timer;
-    let upId: NodeJS.Timer;
-    if (donkeyY < donkeyGroundLevel && !goingUp) {
-      downId = setInterval(() => {
-        setDonkeyY(Math.min(donkeyY + 10, donkeyGroundLevel));
-      }, 24);
-      return () => clearInterval(downId);
-    } else if (goingUp && gameRunning) {
-      upId = setInterval(() => {
-        setDonkeyY(donkeyY - 12);
-      }, 24);
-      return () => clearInterval(upId);
+    let timeId: NodeJS.Timer;
+    if (jumped && donkeyY <= donkeyGroundLevel) {
+      timeId = setInterval(() => {
+        setJumpTime(jumpTime + 1);
+        setDonkeyY(
+          // y = y0 - v0t + 1/2*at²
+          donkeyGroundLevel -
+            JUMP_SPEED * jumpTime +
+            (1 / 2) * GRAVITY * Math.pow(jumpTime, 2),
+        );
+      }, FRAME_RATE);
+      return () => clearInterval(timeId);
     }
-  }, [donkeyY, GAME_HEIGHT, goingUp, gameRunning]);
+    if (jumpTime > MINIMAL_JUMP_TIME && donkeyY >= donkeyGroundLevel) {
+      setDonkeyY(donkeyGroundLevel);
+      setJumped(false);
+      setJumpTime(0);
+    }
+  }, [donkeyY, jumpTime, jumped]);
 
   const resetGame = () => {
     setDonkeyY(donkeyGroundLevel);
-    setGoingUp(false);
     setObstacleX(GAME_WIDTH);
     setGameRunning(true);
     setScore(0);
@@ -69,13 +72,17 @@ export const Game = () => {
 
   const handleClick = () => {
     if (!gameRunning) resetGame();
-    if (donkeyY == donkeyGroundLevel) setGoingUp(true);
+    if (donkeyY == donkeyGroundLevel) setJumped(true);
   };
 
   return (
     <CenterWrapper>
       <GameBox height={GAME_HEIGHT} width={GAME_WIDTH} onClick={handleClick}>
         {/* <Log>
+          <pre style={{ whiteSpace: 'pre-wrap' }}>
+            {'gameRunning: '}
+            {JSON.stringify(gameRunning, null, 2)}
+          </pre>
           <pre style={{ whiteSpace: 'pre-wrap' }}>
             {'obstacleX: '}
             {JSON.stringify(obstacleX, null, 2)}
