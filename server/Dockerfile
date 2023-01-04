@@ -6,7 +6,7 @@ FROM node:alpine
 WORKDIR /usr/src/app
 
 # copy the package.json files from local machine to the workdir in container
-COPY package*.json ./
+COPY package.json .
 
 # run npm install in our local machine
 RUN npm install

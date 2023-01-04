@@ -6,7 +6,7 @@ FROM node:alpine
 WORKDIR /usr/src/client
 
 # copy the package.json files from local machine to the workdir in container
-COPY package*.json ./
+COPY package.json .
 
 # run npm install in our local machine
 RUN npm install
@@ -15,7 +15,7 @@ RUN npm install
 COPY . .
 
 # our app is running on port 5823 within the container, so need to expose it
-EXPOSE 3000
+EXPOSE 3284
 
 # the command that starts our app
-CMD ["yarn", "dev", "--", "--host"]
+CMD ["npm", "run", "dev"]
