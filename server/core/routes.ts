@@ -14,7 +14,7 @@ export const routes: Route[] = [
     path: '/',
     method: 'get',
     handler: async (ctx) => {
-      ctx.body = 'hello home';
+      ctx.body = 'haista home';
     },
   },
   {
