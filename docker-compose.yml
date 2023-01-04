@@ -5,7 +5,7 @@ services:
     build:
       context: ./server
     ports:
-      - "5000:5000"
+      - "5823:5823"
     volumes:
       - ./server:/usr/src/app
       - "./:/src"

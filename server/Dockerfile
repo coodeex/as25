@@ -14,8 +14,8 @@ RUN npm install
 # copy the generated modules and all other files to the container
 COPY . .
 
-# our app is running on port 5000 within the container, so need to expose it
-EXPOSE 5000
+# our app is running on port 5823 within the container, so need to expose it
+EXPOSE 5823
 
 # the command that starts our app
 CMD ["npm", "run", "start"]

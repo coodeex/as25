@@ -35,7 +35,7 @@ initDataSource
 
     // TODO check router.allowedMethods
 
-    const PORT = 5000;
+    const PORT = 5823;
     app.listen(PORT, () =>
       console.log(`Server is up and running at http://localhost:${PORT}`),
     );
