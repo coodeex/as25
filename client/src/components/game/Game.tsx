@@ -1,13 +1,18 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import myImage from '../../assets/RunningDonkey.gif';
+import RunningDonkey from '../../assets/RunningDonkey.gif';
+import StaticDonkey from '../../assets/Donkey/Aasi6.png';
+import bg from '../../assets/pixelBG.png';
 
 const DONKEY_HEIGHT = 1395 / 18;
-const DONKEY_WIDTH = 1800 / 18;
+const DONKEY_WIDTH = 1700 / 18;
+const DONKEY_IMAGES = { runningDonkey: RunningDonkey, staticDonkey: StaticDonkey };
 const GAME_HEIGHT = 500;
 const GAME_WIDTH = 700;
-const OBSTACLE_HEIGHT = 170;
+const OBSTACLE_HEIGHT = 120;
 const OBSTACLE_WIDTH = 30;
+const COLLISION_FLEX_X = 5; //How much the donkey can be on top of obstacle in x before collision
+const COLLISION_FLEX_Y = 10; //How much the donkey can be on top of obstacle in y before collision
 const JUMP_SPEED = 22;
 const GRAVITY = 1;
 const MINIMAL_JUMP_TIME = 3;
@@ -23,11 +28,16 @@ export const Game = () => {
   const [score, setScore] = useState(0);
   const [jumped, setJumped] = useState(false);
   const [jumpTime, setJumpTime] = useState(0);
+  const [donkeyImgIndex, setDonkeyImgIndex] = useState(1);
+  const [donkeyImg, setDonkeyImg] = useState(DONKEY_IMAGES.runningDonkey);
 
   useEffect(() => {
-    if (obstacleX + 5 <= DONKEY_WIDTH && donkeyY - 50 >= obstacleGroundLevel) {
-      //some slack
+    if (
+      obstacleX <= DONKEY_WIDTH - COLLISION_FLEX_X &&
+      donkeyY - COLLISION_FLEX_Y >= obstacleGroundLevel
+    ) {
       setGameRunning(false);
+      setDonkeyImg(DONKEY_IMAGES.staticDonkey);
     }
   }, [donkeyY, obstacleX]);
 
@@ -46,7 +56,7 @@ export const Game = () => {
 
   useEffect(() => {
     let timeId: NodeJS.Timer;
-    if (jumped && donkeyY <= donkeyGroundLevel) {
+    if (jumped && donkeyY <= donkeyGroundLevel && gameRunning) {
       timeId = setInterval(() => {
         setJumpTime(jumpTime + 1);
         setDonkeyY(
@@ -69,6 +79,7 @@ export const Game = () => {
     setDonkeyY(donkeyGroundLevel);
     setObstacleX(GAME_WIDTH);
     setGameRunning(true);
+    setDonkeyImg(DONKEY_IMAGES.runningDonkey);
     setScore(0);
   };
 
@@ -98,7 +109,7 @@ export const Game = () => {
             {JSON.stringify(obstacleGroundLevel, null, 2)}
           </pre>
         </Log> */}
-        <Donkey height={DONKEY_HEIGHT} width={DONKEY_WIDTH} y={donkeyY} />
+        <Donkey height={DONKEY_HEIGHT} width={DONKEY_WIDTH} y={donkeyY} img={donkeyImg} />
         <Obstacle
           height={OBSTACLE_HEIGHT}
           width={OBSTACLE_WIDTH}
@@ -126,14 +137,14 @@ const Log = styled.div`
 const Obstacle = styled.div<{ height: number; width: number; top: number; x: number }>`
   position: relative;
   top: ${p => p.top}px;
-  background-color: #545353;
+  background-color: #4b0877;
   left: ${p => p.x}px;
   height: ${p => p.height}px;
   width: ${p => p.width}px;
 `;
 
-const Donkey = styled.div<{ height: number; width: number; y: number }>`
-  background-image: url(${myImage});
+const Donkey = styled.div<{ height: number; width: number; y: number; img: string }>`
+  background-image: url(${p => p.img});
   background-size: cover;
   position: relative;
   top: ${p => p.y}px;
@@ -144,7 +155,8 @@ const Donkey = styled.div<{ height: number; width: number; y: number }>`
 const GameBox = styled.div<{ height: number; width: number }>`
   height: ${p => p.height}px;
   width: ${p => p.width}px;
-  background-color: #b0a2c5;
+  background-image: url(${bg});
+  background-position: 1200px 750px;
   overflow: hidden;
 `;
 
