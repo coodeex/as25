@@ -9,13 +9,14 @@ const DONKEY_WIDTH = 1700 / 18;
 const DONKEY_IMAGES = { runningDonkey: RunningDonkey, staticDonkey: StaticDonkey };
 const GAME_HEIGHT = 500;
 const GAME_WIDTH = 700;
+const DONKEY_LEFT_PADDING = 100;
 const OBSTACLE_HEIGHT = 120;
 const OBSTACLE_WIDTH = 30;
 const COLLISION_FLEX_X = 5; //How much the donkey can be on top of obstacle in x before collision
 const COLLISION_FLEX_Y = 10; //How much the donkey can be on top of obstacle in y before collision
-const JUMP_SPEED = 22;
+const JUMP_SPEED = 20;
 const GRAVITY = 1;
-const MINIMAL_JUMP_TIME = 3;
+const MINIMAL_JUMP_TIME = 20;
 const FRAME_RATE = 24;
 
 const donkeyGroundLevel = GAME_HEIGHT - DONKEY_HEIGHT;
@@ -28,12 +29,12 @@ export const Game = () => {
   const [score, setScore] = useState(0);
   const [jumped, setJumped] = useState(false);
   const [jumpTime, setJumpTime] = useState(0);
-  const [donkeyImgIndex, setDonkeyImgIndex] = useState(1);
   const [donkeyImg, setDonkeyImg] = useState(DONKEY_IMAGES.runningDonkey);
 
   useEffect(() => {
     if (
-      obstacleX <= DONKEY_WIDTH - COLLISION_FLEX_X &&
+      obstacleX <= DONKEY_LEFT_PADDING + DONKEY_WIDTH - COLLISION_FLEX_X &&
+      obstacleX > DONKEY_LEFT_PADDING - OBSTACLE_WIDTH &&
       donkeyY - COLLISION_FLEX_Y >= obstacleGroundLevel
     ) {
       setGameRunning(false);
@@ -109,7 +110,13 @@ export const Game = () => {
             {JSON.stringify(obstacleGroundLevel, null, 2)}
           </pre>
         </Log> */}
-        <Donkey height={DONKEY_HEIGHT} width={DONKEY_WIDTH} y={donkeyY} img={donkeyImg} />
+        <Donkey
+          height={DONKEY_HEIGHT}
+          width={DONKEY_WIDTH}
+          y={donkeyY}
+          img={donkeyImg}
+          padding={DONKEY_LEFT_PADDING}
+        />
         <Obstacle
           height={OBSTACLE_HEIGHT}
           width={OBSTACLE_WIDTH}
@@ -143,11 +150,18 @@ const Obstacle = styled.div<{ height: number; width: number; top: number; x: num
   width: ${p => p.width}px;
 `;
 
-const Donkey = styled.div<{ height: number; width: number; y: number; img: string }>`
+const Donkey = styled.div<{
+  height: number;
+  width: number;
+  y: number;
+  img: string;
+  padding: number;
+}>`
   background-image: url(${p => p.img});
   background-size: cover;
   position: relative;
   top: ${p => p.y}px;
+  left: ${p => p.padding}px;
   height: ${p => p.height}px;
   width: ${p => p.width}px;
 `;
