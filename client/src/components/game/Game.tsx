@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import myImage from '../../assets/RunningDonkey.gif';
 
-const DONKEY_HEIGHT = 30;
-const DONKEY_WIDTH = 30;
+const DONKEY_HEIGHT = 1395 / 18;
+const DONKEY_WIDTH = 1800 / 18;
 const GAME_HEIGHT = 500;
 const GAME_WIDTH = 700;
-const OBSTACLE_HEIGHT = 160;
+const OBSTACLE_HEIGHT = 170;
 const OBSTACLE_WIDTH = 30;
-const JUMP_SPEED = 20;
+const JUMP_SPEED = 22;
 const GRAVITY = 1;
 const MINIMAL_JUMP_TIME = 3;
 const FRAME_RATE = 24;
@@ -24,7 +25,8 @@ export const Game = () => {
   const [jumpTime, setJumpTime] = useState(0);
 
   useEffect(() => {
-    if (obstacleX <= DONKEY_WIDTH && donkeyY >= obstacleGroundLevel) {
+    if (obstacleX + 5 <= DONKEY_WIDTH && donkeyY - 50 >= obstacleGroundLevel) {
+      //some slack
       setGameRunning(false);
     }
   }, [donkeyY, obstacleX]);
@@ -131,10 +133,10 @@ const Obstacle = styled.div<{ height: number; width: number; top: number; x: num
 `;
 
 const Donkey = styled.div<{ height: number; width: number; y: number }>`
+  background-image: url(${myImage});
+  background-size: cover;
   position: relative;
   top: ${p => p.y}px;
-  background-color: #6717a0;
-  border-radius: 50%;
   height: ${p => p.height}px;
   width: ${p => p.width}px;
 `;
@@ -142,7 +144,7 @@ const Donkey = styled.div<{ height: number; width: number; y: number }>`
 const GameBox = styled.div<{ height: number; width: number }>`
   height: ${p => p.height}px;
   width: ${p => p.width}px;
-  background-color: #ccc;
+  background-color: #b0a2c5;
   overflow: hidden;
 `;
 

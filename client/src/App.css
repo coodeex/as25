@@ -1,3 +1,8 @@
+body {
+  background-color: #130e1a;
+  min-height: 100vh;
+}
+
 :root {
   --primay: black;
   --bg-primay: white;
@@ -44,8 +49,6 @@ button {
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -1,4 +1,4 @@
-import type { CSSObject } from 'styled-components';
+import type { CSSObject } from 'styled-components'
 
 const lightColors = {
   // Brand colors
@@ -41,7 +41,7 @@ const lightColors = {
   surface: '#FFFFFF', // cards, sidebars, navbars, etc.
   elevated: '#FFFFFF', // modals, drawers, etc.
   background: '#161616', // app main background
-};
+}
 
 // TODO: fine-tune dark mode colors (eg. update vibrancy)
 const darkColors = {
@@ -83,18 +83,18 @@ const darkColors = {
   backdrop: 'rgba(0,0,0,0.5)', // modal backdrop etc.
   surface: '#222222', // cards, sidebars, navbars, etc.
   elevated: '#333333', // modals, drawers, etc.
-  background: '#111111', // app main background
-};
+  background: '#282c34', // app main background
+}
 
-const rem = (px: number) => `${px / 16}rem`;
-const em = (px: number) => `${px / 16}em`;
+const rem = (px: number) => `${px / 16}rem`
+const em = (px: number) => `${px / 16}em`
 
 const breakpoints = {
   phone: { min: 0, max: 767 },
   tablet: { min: 768, max: 1024 },
   desktop: { min: 1025, max: 1800 },
   monitor: { min: 1801, max: Infinity },
-};
+}
 
 const media = {
   phone: `@media (max-width: ${em(breakpoints.phone.max)})`,
@@ -105,12 +105,12 @@ const media = {
   desktopDown: `@media (max-width: ${em(breakpoints.desktop.max)})`,
   desktopUp: `@media (min-width: ${em(breakpoints.desktop.min)})`,
   monitor: `@media (min-width: ${em(breakpoints.monitor.min)})`,
-};
+}
 
 export const theme = {
   rem,
   media,
-  colors: lightColors,
+  colors: darkColors,
   typography: {
     title1: { fontSize: rem(48), fontWeight: 800 } as CSSObject,
     title2: { fontSize: rem(32), fontWeight: 800 } as CSSObject,
@@ -167,18 +167,18 @@ export const theme = {
     medium: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)', // prettier-ignore
     large: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)', // prettier-ignore
   },
-};
+}
 
 export const darkTheme = {
   ...theme,
   colors: darkColors,
-};
+}
 
-export type Theme = typeof theme;
-export type Typography = keyof Theme['typography'];
-export type Color = keyof Theme['colors'];
-export type Spacing = keyof Theme['spacing'];
-export type Radius = keyof Theme['radii'];
-export type Breakpoint = keyof Theme['media'];
-export type Shadow = keyof Theme['shadows'];
-export type Size = keyof Theme['sizing'];
+export type Theme = typeof theme
+export type Typography = keyof Theme['typography']
+export type Color = keyof Theme['colors']
+export type Spacing = keyof Theme['spacing']
+export type Radius = keyof Theme['radii']
+export type Breakpoint = keyof Theme['media']
+export type Shadow = keyof Theme['shadows']
+export type Size = keyof Theme['sizing']

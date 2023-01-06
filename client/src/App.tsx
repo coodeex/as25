@@ -33,7 +33,6 @@ const App = () => {
 };
 
 const PageWrapper = styled.div`
-  background-color: ${p => theme.colors.background};
   height: 100vh;
   width: 100vw;
 `;
