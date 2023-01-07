@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import RunningDonkey from '../../assets/RunningDonkey.gif';
 import StaticDonkey from '../../assets/Donkey/Aasi6.png';
-import bg from '../../assets/pixelBG.png';
+import bg from '../../assets/BG2.gif';
+import bgStatic from '../../assets/BGStatic.png';
 
 const DONKEY_HEIGHT = 1395 / 18;
 const DONKEY_WIDTH = 1700 / 18;
 const DONKEY_IMAGES = { runningDonkey: RunningDonkey, staticDonkey: StaticDonkey };
+const BG_IMAGES = { movingBG: bg, staticBG: bgStatic };
 const GAME_HEIGHT = 500;
 const GAME_WIDTH = 700;
 const DONKEY_LEFT_PADDING = 100;
@@ -16,7 +18,7 @@ const COLLISION_FLEX_X = 5; //How much the donkey can be on top of obstacle in x
 const COLLISION_FLEX_Y = 10; //How much the donkey can be on top of obstacle in y before collision
 const JUMP_SPEED = 20;
 const GRAVITY = 1;
-const MINIMAL_JUMP_TIME = 20;
+const MINIMAL_JUMP_TIME = 3;
 const FRAME_RATE = 24;
 
 const donkeyGroundLevel = GAME_HEIGHT - DONKEY_HEIGHT;
@@ -30,6 +32,7 @@ export const Game = () => {
   const [jumped, setJumped] = useState(false);
   const [jumpTime, setJumpTime] = useState(0);
   const [donkeyImg, setDonkeyImg] = useState(DONKEY_IMAGES.runningDonkey);
+  const [bgImg, setBgImg] = useState(BG_IMAGES.movingBG);
 
   useEffect(() => {
     if (
@@ -39,6 +42,7 @@ export const Game = () => {
     ) {
       setGameRunning(false);
       setDonkeyImg(DONKEY_IMAGES.staticDonkey);
+      setBgImg(BG_IMAGES.staticBG);
     }
   }, [donkeyY, obstacleX]);
 
@@ -64,7 +68,7 @@ export const Game = () => {
           // y = y0 - v0t + 1/2*at²
           donkeyGroundLevel -
             JUMP_SPEED * jumpTime +
-            (1 / 2) * GRAVITY * Math.pow(jumpTime, 2),
+            0.5 * GRAVITY * Math.pow(jumpTime, 2),
         );
       }, FRAME_RATE);
       return () => clearInterval(timeId);
@@ -81,6 +85,7 @@ export const Game = () => {
     setObstacleX(GAME_WIDTH);
     setGameRunning(true);
     setDonkeyImg(DONKEY_IMAGES.runningDonkey);
+    setBgImg(BG_IMAGES.movingBG);
     setScore(0);
   };
 
@@ -91,7 +96,7 @@ export const Game = () => {
 
   return (
     <CenterWrapper>
-      <GameBox height={GAME_HEIGHT} width={GAME_WIDTH} onClick={handleClick}>
+      <GameBox height={GAME_HEIGHT} width={GAME_WIDTH} onClick={handleClick} img={bgImg}>
         {/* <Log>
           <pre style={{ whiteSpace: 'pre-wrap' }}>
             {'gameRunning: '}
@@ -166,11 +171,19 @@ const Donkey = styled.div<{
   width: ${p => p.width}px;
 `;
 
-const GameBox = styled.div<{ height: number; width: number }>`
+// const bgAnimation = keyframes`
+//  0% { background-color: 	'#800000' }
+//  30% { background-color: 	'	#FF0000' }
+//  40% { background-color: 	'#800080' }
+//  100% { background-color: 	'#FF00FF' }
+// `
+
+const GameBox = styled.div<{ height: number; width: number; img: string }>`
   height: ${p => p.height}px;
   width: ${p => p.width}px;
-  background-image: url(${bg});
-  background-position: 1200px 750px;
+  background-image: url(${p => p.img});
+  background-size: cover;
+  background-position: -4px -50px;
   overflow: hidden;
 `;
 
