@@ -65,6 +65,9 @@ const darkColors = {
   errorText: '#ff7070',
   errorMuted: '#3e1c1d',
 
+  //Game colors
+  gameText: '#24c89f',
+
   // Muted gray colors
   muted1: '#8e8e93',
   muted2: '#636366',
@@ -112,6 +115,8 @@ export const theme = {
   media,
   colors: darkColors,
   typography: {
+    gameScore: { fontSize: rem(48), fontWeight: 800 } as CSSObject,
+    gameBody: { fontSize: rem(48), fontWeight: 800, letterSpacing: '5px', fontStyle: 'italic' } as CSSObject,
     title1: { fontSize: rem(48), fontWeight: 800 } as CSSObject,
     title2: { fontSize: rem(32), fontWeight: 800 } as CSSObject,
     title3: { fontSize: rem(24), fontWeight: 800 } as CSSObject,
