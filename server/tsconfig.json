@@ -9,8 +9,12 @@
     "noImplicitAny": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "typeRoots": ["./src/common/typings", "./node_modules/@types"],
+    "outDir": "./dist",
+    "sourceMap": true // todo check
   },
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Recommended"
+  "display": "Recommended",
+  "include": ["shared/**/*.ts", "src/**/*.ts", "index.ts", "test/**/*.ts"] // todo check
 }
