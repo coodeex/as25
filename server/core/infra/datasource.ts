@@ -13,4 +13,6 @@ export const AppDataSource = new DataSource({
   logging: false,
 });
 
-export const initDataSource = AppDataSource.initialize();
+// TODO enable when db connection works
+export const initDataSource = new Promise((res) => setTimeout(res, 20));
+// export const initDataSource = AppDataSource.initialize();

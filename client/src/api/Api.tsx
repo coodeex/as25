@@ -17,7 +17,12 @@ export const useGet = (url: string) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await ax.get(`/${url}`);
+      let response: any;
+      try {
+        response = await ax.get(`/${url}`);
+      } catch (e) {
+        console.log(e);
+      }
       setData(response.data);
     };
     fetchData();
@@ -39,7 +44,9 @@ export const usePost = (url: string, data: any) => {
 };
 
 export const Home = () => {
+  console.log('get data');
   const data = useGet('');
+
   return (
     <Text variant="title2" color="muted1">
       {data}

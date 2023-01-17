@@ -1,0 +1,27 @@
+
+FROM node:alpine as build
+
+WORKDIR /builder
+
+COPY package*.json ./
+
+RUN npm ci --loglevel warn
+
+COPY . .
+
+RUN npm run build
+
+FROM nginx:stable-alpine
+
+WORKDIR /app
+
+ENV NODE_ENV=production
+
+COPY --from=build /builder/dist .
+
+COPY nginx.conf /etc/nginx 
+
+EXPOSE 3284
+
+CMD ["nginx", "-g", "daemon off;"]
+
