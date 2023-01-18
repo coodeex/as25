@@ -19,7 +19,7 @@ ENV NODE_ENV=production
 
 COPY --from=build /builder/dist .
 
-COPY nginx.conf /etc/nginx 
+COPY nginx.conf /etc/nginx
 
 EXPOSE 3284
 
