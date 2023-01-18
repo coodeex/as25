@@ -42,7 +42,7 @@ initDataSource
 
     // TODO check router.allowedMethods
 
-    const PORT = 5823;
+    const PORT = process.env.NODE_ENV === 'production' ? 80 : 5823;
     app.listen(PORT, () =>
       console.log(`Server is up and running at http://localhost:${PORT}`),
     );

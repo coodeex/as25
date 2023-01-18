@@ -21,7 +21,8 @@ COPY --from=build /builder/dist .
 
 COPY nginx.conf /etc/nginx
 
-EXPOSE 3284
+ENV PORT 80
+EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
 
