@@ -16,3 +16,13 @@ docker-compose down --volumes
 and after that 
 docker-compose down
 uses init.sql to create database again
+
+
+client
+docker build  -f Dockerfile.build -t jeec .
+docker run --rm -p 3284:3284 --name jec jeec:latest
+
+
+server
+docker build -f Dockerfile.build -t jeees .
+docker run --rm -p 5823:5823 --name jeeees jeees:latest

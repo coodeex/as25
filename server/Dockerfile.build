@@ -1,0 +1,36 @@
+
+FROM node:alpine as build
+
+WORKDIR /builder
+
+COPY package*.json ./
+
+RUN npm ci --loglevel warn
+
+COPY . .
+
+RUN npm run build
+
+FROM node:alpine
+
+WORKDIR /app
+
+COPY --from=build /builder/dist .
+# COPY --from=build /builder/package.json .
+# COPY --from=build /builder/package-lock.json .
+# COPY --from=build /builder/node_modules ./node_modules
+
+# RUN addgroup -S -g 74839 node || \
+#     adduser -S -u 74276 -s /bin/false node || \
+#     addgroup node node || \
+#     su node -s /bin/sh -c "node --version"
+
+ENV NODE_ENV=production
+
+# USER node
+ENV PORT 8080
+EXPOSE 8080
+# EXPOSE 5823
+
+CMD ["node", "./index.js"]
+

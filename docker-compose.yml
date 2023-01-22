@@ -37,7 +37,7 @@ services:
     build:
       context: ./nginx
     ports:
-      - "80:80"
+      - "6451:80"
 
   db:
     container_name: jrm_database

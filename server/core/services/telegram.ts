@@ -1,6 +1,7 @@
 import TelegramBot from 'node-telegram-bot-api';
 import { Message } from '../entities/message';
-import { AppDataSource } from '../infra/datasource';
+// TODO enable when db connection works
+// import { AppDataSource } from '../infra/datasource';
 import { Ctx } from '../types/koa';
 import { blueLog } from '../util/colorLog';
 import { sleep } from '../util/sleep';
@@ -33,8 +34,8 @@ export const sendMessage = async (ctx: Ctx) => {
   blueLog(message.id);
   message.msg = msg;
   message.sender = 'unknown';
-
-  await AppDataSource.manager.save(message);
+  // TODO enable when db connection works
+  // await AppDataSource.manager.save(message);
   if (!message.id) {
     // error(ctx, errors.saveMessage);
     return;
@@ -46,6 +47,7 @@ export const sendMessage = async (ctx: Ctx) => {
 
 export const getMessages = async (ctx: Ctx) => {
   await sleep(700);
-  const msgRepository = AppDataSource.getRepository(Message);
-  ctx.body = await msgRepository.find();
+  // TODO enable when db connection works
+  // const msgRepository = AppDataSource.getRepository(Message);
+  // ctx.body = await msgRepository.find();
 };

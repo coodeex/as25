@@ -30,7 +30,7 @@ export const Game = () => {
   }, [donkeyY, obstacleX]);
 
   useEffect(() => {
-    let xId: NodeJS.Timer;
+    let xId: any;
     if (gameRunning && obstacleX > -OBSTACLE_WIDTH) {
       xId = setInterval(() => {
         setObstacleX(obstacleX - 5);
@@ -43,7 +43,7 @@ export const Game = () => {
   }, [obstacleX, gameRunning, score]);
 
   useEffect(() => {
-    let timeId: NodeJS.Timer;
+    let timeId: any;
     if (jumped && donkeyY <= donkeyGroundLevel) {
       timeId = setInterval(() => {
         setJumpTime(jumpTime + 1);
