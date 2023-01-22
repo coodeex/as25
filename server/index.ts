@@ -14,7 +14,6 @@ import { initDataSource } from './core/infra/datasource';
 const corsOptions = {
   origin: '*', // TODO change to client url when you know what it is
 };
-const PORT = process.env.PORT || 5823;
 
 initDataSource
   .then(() => {
@@ -43,7 +42,7 @@ initDataSource
 
     // TODO check router.allowedMethods
 
-    // const PORT = process.env.NODE_ENV === 'production' ? 8080 : 5823;
+    const PORT = process.env.PORT || 5823;
     app.listen(PORT, () =>
       console.log(`Server is up and running at http://localhost:${PORT}`),
     );
