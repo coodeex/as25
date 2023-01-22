@@ -7,21 +7,20 @@ import koaRouter from 'koa-joi-router';
 import bodyParser from 'koa-bodyparser';
 import { routes } from './core/routes';
 import { joiError } from './core/util/error';
-import cors from '@koa/cors';
+// import cors from '@koa/cors';
 
 import { initDataSource } from './core/infra/datasource';
 
 const corsOptions = {
   origin: '*', // TODO change to client url when you know what it is
 };
-const PORT = process.env.PORT || 5823;
 
 initDataSource
   .then(() => {
     const app = new Koa();
     const router = koaRouter();
     const Joi = koaRouter.Joi;
-    app.use(cors(corsOptions));
+    // app.use(cors(corsOptions));
     app.use(bodyParser());
 
     app.use(async (ctx, next) => {
@@ -43,7 +42,7 @@ initDataSource
 
     // TODO check router.allowedMethods
 
-    // const PORT = process.env.NODE_ENV === 'production' ? 8080 : 5823;
+    const PORT = process.env.PORT || 5823;
     app.listen(PORT, () =>
       console.log(`Server is up and running at http://localhost:${PORT}`),
     );

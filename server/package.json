@@ -5,7 +5,6 @@
   "main": "index.ts",
   "scripts": {
     "start": "ts-node-dev --respawn index.ts",
-    "start:prod": "pm2-runtime start ./dist/index.js",
     "build": "tsc --build tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
