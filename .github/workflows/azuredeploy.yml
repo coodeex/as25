@@ -1,45 +1,66 @@
 # File: .github/workflows/workflow.yml
 
-on: push
+env:
+  CLIENT_APP_LOCATION: "/client" # location of your client code
+  APP_ARTIFACT_LOCATION: "dist" # location of client code build output
+
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    name: Build and Deploy Client
     steps:
-      # checkout the repo
-      - name: "Checkout Github Action"
-        uses: actions/checkout@master
-
-      # setup node
-      - name: Setup Node 18.13.0
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
         with:
-          node-version: "18.13.0"
-
-      # server
-      - name: "Build server"
-        run: |
-          npm install
-          npm run build --if-present
-        working-directory: server
-
-      - name: "Deploy server"
-        uses: azure/webapps-deploy@v2
+          submodules: true
+      - name: Build And Deploy Client
+        uses: Azure/static-web-apps-deploy@1a947af9992250f3bc2e68ad0754c0b0c11566c9
         with:
-          app-name: as25-api
-          publish-profile: ${{ secrets.AZUREWEBAPPPUBLISHPROFILE }}
-          package: server
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: "upload"
+          app_location: ${{ env.CLIENT_APP_LOCATION }}
+          app_artifact_location: ${{ env.APP_ARTIFACT_LOCATION }}
 
-      # client
-      - name: "Build Client"
-        run: |
-          npm install
-          npm run build --if-present
-        working-directory: client
+    # steps:
+    #   # checkout the repo
+    #   - name: "Checkout Github Action"
+    #     uses: actions/checkout@master
 
-      - name: "Deploy client"
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: as25-client
-          publish-profile: ${{ secrets.AZUREWEBAPPPUBLISHPROFILECLIENT }}
-          package: client
+    #   # setup node
+    #   - name: Setup Node 18.13.0
+    #     uses: actions/setup-node@v1
+    #     with:
+    #       node-version: "18.13.0"
+
+    #   # server
+    #   - name: "Build server"
+    #     run: |
+    #       npm install
+    #       npm run build --if-present
+    #     working-directory: server
+
+    #   - name: "Deploy server"
+    #     uses: azure/webapps-deploy@v2
+    #     with:
+    #       app-name: as25-api
+    #       publish-profile: ${{ secrets.AZUREWEBAPPPUBLISHPROFILE }}
+    #       package: server
+
+    #   # client
+    #   - name: "Build Client"
+    #     run: |
+    #       npm install
+    #       npm run build --if-present
+    #     working-directory: client
+
+    #   - name: "Deploy client"
+    #     uses: azure/webapps-deploy@v2
+    #     with:
+    #       app-name: as25-client
+    #       publish-profile: ${{ secrets.AZUREWEBAPPPUBLISHPROFILECLIENT }}
+    #       package: client
