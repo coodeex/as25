@@ -10,19 +10,36 @@ jobs:
       - name: "Checkout Github Action"
         uses: actions/checkout@master
 
+      # setup node
       - name: Setup Node 18.13.0
         uses: actions/setup-node@v1
         with:
           node-version: "18.13.0"
-      - name: "npm install, build, and test"
+
+      # server
+      - name: "Build server"
         run: |
           npm install
           npm run build --if-present
         working-directory: server
 
-      - name: "Run Azure webapp deploy action using publish profile credentials"
+      - name: "Deploy server"
         uses: azure/webapps-deploy@v2
         with:
           app-name: as25-api
           publish-profile: ${{ secrets.AZUREWEBAPPPUBLISHPROFILE }}
           package: server
+
+      # client
+      - name: "Build Client"
+        run: |
+          npm install
+          npm run build --if-present
+        working-directory: client
+
+      - name: "Deploy client"
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: as25-client
+          publish-profile: ${{ secrets.AZUREWEBAPPPUBLISHPROFILECLIENT }}
+          package: client
