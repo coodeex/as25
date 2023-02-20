@@ -9,7 +9,7 @@ type Props = {
 export const TransitionDiv = ({ show }: Props) => {
   return (
     <InOutTransitionWrapper show={show}>
-      <CoolDiv>jea</CoolDiv>
+      <CoolDiv>jeea</CoolDiv>
     </InOutTransitionWrapper>
   );
 };
