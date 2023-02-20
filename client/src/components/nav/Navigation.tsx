@@ -1,4 +1,5 @@
 import { Link, Outlet } from 'react-router-dom';
+import styled from 'styled-components';
 
 export const Navigation = () => {
   return (
@@ -11,6 +12,9 @@ export const Navigation = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
+            <Link to="/theme">Theme</Link>
+          </li>
+          {/* <li>
             <Link to="/chat">Chat</Link>
           </li>
           <li>
@@ -18,7 +22,7 @@ export const Navigation = () => {
           </li>
           <li>
             <Link to="/game">Game</Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
 
