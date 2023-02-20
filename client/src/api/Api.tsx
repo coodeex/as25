@@ -8,7 +8,8 @@ import { error } from '../components/util/error';
 
 const ax = axios.create({
   // TODO change to server url when you know what it is
-  baseURL: process.env.NODE_ENV === 'production' ? 'http://localhost:5823' : '/api',
+  baseURL:
+    process.env.NODE_ENV === 'production' ? 'https://as25-api.azurewebsites.net' : '/api',
   timeout: 5000,
   headers: { 'X-Custom-Header': 'foobar' },
 });
