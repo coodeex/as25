@@ -19,7 +19,6 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
-          <Route path="theme" element={<Colors />} />
           {/* <Route path="chat" element={<Chat />} /> */}
           {/* <Route path="components" element={<ComponentSandbox />} /> */}
           {/* <Route path="game" element={<Game />} /> */}
