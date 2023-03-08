@@ -12,7 +12,7 @@ export const Navigation = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/theme">Theme</Link>
+            <Link to="/colors">Colors</Link>
           </li>
           {/* <li>
             <Link to="/chat">Chat</Link>
