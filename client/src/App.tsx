@@ -20,7 +20,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
-          <Route path="theme" element={<Colors />} />
+          <Route path="colors" element={<Colors />} />
           <Route path="timeline" element={<Timeline />} />
           {/* <Route path="chat" element={<Chat />} /> */}
           {/* <Route path="components" element={<ComponentSandbox />} /> */}
