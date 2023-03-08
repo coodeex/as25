@@ -11,6 +11,7 @@ import { Navigation } from './components/nav/Navigation';
 import { Chat } from './components/telegram/Chat';
 import Colors from './pages/Colors';
 import Home from './pages/Home';
+import Timeline from './pages/Timeline';
 
 const App = () => {
   return (
@@ -19,6 +20,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
+          <Route path="colors" element={<Colors />} />
+          <Route path="timeline" element={<Timeline />} />
           {/* <Route path="chat" element={<Chat />} /> */}
           {/* <Route path="components" element={<ComponentSandbox />} /> */}
           {/* <Route path="game" element={<Game />} /> */}
