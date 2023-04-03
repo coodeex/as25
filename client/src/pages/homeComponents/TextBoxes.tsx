@@ -29,35 +29,52 @@ const TextBoxes = () => {
   );
 };
 
-const Boxes = styled.div``;
+const Boxes = styled.div`
+  padding-bottom: 50px;
+`;
 
 const Image = styled.img`
-  height: 60vh;
-  padding: 30px;
+  padding: 40px 0;
+  max-width: 80vw;
+  @media only screen and (min-width: 1000px) {
+    max-width: 50vw;
+  }
 `;
 
 const Box = styled.div`
   height: 90vh;
+
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   padding-left: 8vw;
+
+  @media only screen and (min-width: 1000px) {
+    flex-direction: row;
+  }
 `;
 
 const BoxRight = styled.div`
   height: 100vh;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   align-items: center;
   padding-right: 8vw;
+  @media only screen and (min-width: 1000px) {
+    flex-direction: row-reverse;
+  }
 `;
 
 const TitleText = styled.span`
   color: #baa5da;
   font-size: 5vh;
-  width: 45vw;
+  width: 90vw;
   font-family: 'Fugaz One', serif;
   padding: 0 3vw 0 3vw;
+
+  @media only screen and (min-width: 1000px) {
+    width: 45vw;
+  }
 `;
 
 export default TextBoxes;

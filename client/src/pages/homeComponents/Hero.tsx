@@ -22,6 +22,9 @@ const Hero = () => {
 
   return (
     <HeroContainer>
+      <MobileContainer>
+        <MobileLogo src={AS25Logo} alt="Logo" />
+      </MobileContainer>
       <Container>
         <TextLeft>{text}</TextLeft>
         <TextCursor />
@@ -34,10 +37,13 @@ const Hero = () => {
 };
 
 const HeroContainer = styled.div`
-  display: flex;
+  display: inline;
   justify-content: space-evenly;
   width: 100vw;
   height: 80vh;
+  @media only screen and (min-width: 1000px) {
+    display: flex;
+  }
 `;
 
 // const LogoContainer = styled.div`
@@ -50,14 +56,40 @@ const HeroContainer = styled.div`
 //   border: 0;
 // `;
 
-const Logo = styled.img`
-  height: 80vh;
+const MobileContainer = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+`;
+
+const MobileLogo = styled.img`
+  padding-left: 40px;
+  max-width: 100vw;
+  max-height: 600px;
   margin-left: -50px;
+  @media only screen and (min-width: 1000px) {
+    display: none;
+    height: 80vh;
+  }
+`;
+
+const Logo = styled.img`
+  max-width: 99vw;
+  display: none;
+  height: 80vh;
+  @media only screen and (min-width: 1000px) {
+    display: inline;
+  }
 `;
 
 const Container = styled.div`
   display: flex;
-  padding: 20vh 0 0 3vw;
+  padding: 0 0 0 3vw;
+  max-height: 600px;
+  @media only screen and (min-width: 1000px) {
+    padding: 20vh 0 0 3vw;
+  }
 `;
 
 const blinkTextCursor = keyframes`
@@ -73,9 +105,15 @@ const TextCursor = styled.span`
 
 const TextLeft = styled.span`
   color: #baa5da;
-  font-size: 7vh;
-  width: 45vw;
+  font-size: 4vh;
+  width: 90vw;
+  text-align: center;
   font-family: 'Fugaz One', serif;
+  @media only screen and (min-width: 1000px) {
+    font-size: 7vh;
+    width: 45vw;
+    text-align: left;
+  }
 `;
 
 export default Hero;

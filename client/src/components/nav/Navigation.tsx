@@ -6,7 +6,7 @@ export const Navigation = () => {
   return (
     <div>
       <LogoBanner>
-        <TitleText>Automaatio- ja systeemitekniikan killan 25. vuosijuhla</TitleText>
+        <TitleText>Automaatio- ja systeemitekniikan killan 25. juhlavuosi</TitleText>
       </LogoBanner>
       {/* A "layout route" is a good place to put markup you want to
             share across all the pages on your site, like navigation. */}
@@ -57,10 +57,13 @@ const TitleText = styled.div`
   display: flex;
   margin: auto;
   align-self: center;
-  font-size: 18px;
+  font-size: 14px;
   color: #bdadcc;
   font-weight: 300;
   padding-bottom: 2px;
+  @media only screen and (min-width: 500px) {
+    font-size: 18px;
+  }
 `;
 
 const NavBar = styled.nav`

@@ -17,11 +17,14 @@ const CompanyLogos = () => {
 };
 
 const Container = styled.div`
-  display: flex;
+  display: inline;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   padding-bottom: 20vh;
+  @media only screen and (min-width: 1000px) {
+    display: flex;
+  }
 `;
 
 const TitleText = styled.span`
