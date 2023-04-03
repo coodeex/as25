@@ -6,7 +6,7 @@ const lightColors = {
   primaryText: '#015227',
   primaryMuted: '#d6ebdb',
   onPrimary: '#ffffff', // color when text/icon/etc is on primary color
-  asPurple: '#620062',
+  asPurple: '#a772cc',
 
   // Informative colors
   info: '#3B82F6',
