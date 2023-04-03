@@ -14,8 +14,8 @@ const CompanyLogos = () => {
 };
 
 const LogoList = styled.div`
-  padding-top: 500px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
 `;
 

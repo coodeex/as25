@@ -15,28 +15,26 @@ export const Navigation = () => {
         </LogoBanner>
       {/* A "layout route" is a good place to put markup you want to
             share across all the pages on your site, like navigation. */}
-      <nav>
-        <NavBar>
-          <>
-            <StyledLink to="/">Home</StyledLink>
-          </>
-          <>
-            <StyledLink to="/colors">Colors</StyledLink>
-          </>
-          <>
-            <StyledLink to="/timeline">Timeline</StyledLink>
-          </>
-          {/* <li>
-            <Link to="/chat">Chat</Link>
-          </li>
-          <li>
-            <Link to="/components">Sandbox</Link>
-          </li>
-          <li>
-            <Link to="/game">Game</Link>
-          </li> */}
-        </NavBar>
-      </nav>
+      <NavBar>
+        <>
+          <StyledLink to="/">Home</StyledLink>
+        </>
+        <>
+          <StyledLink to="/colors">Colors</StyledLink>
+        </>
+        <>
+          <StyledLink to="/timeline">Timeline</StyledLink>
+        </>
+        {/* <li>
+          <Link to="/chat">Chat</Link>
+        </li>
+        <li>
+          <Link to="/components">Sandbox</Link>
+        </li>
+        <li>
+          <Link to="/game">Game</Link>
+        </li> */}
+      </NavBar>
 
       <hr />
 
@@ -66,8 +64,11 @@ const TitleText = styled.div`
   font-size: 22px;
 `;
 
-const NavBar = styled.div`
+const NavBar = styled.nav`
+  position: sticky;
+  top: 0;
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   flex-direction: row;
   justify-content: space-evenly;
