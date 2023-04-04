@@ -1,27 +1,22 @@
 import { Link, Outlet } from 'react-router-dom';
 import styled from 'styled-components';
-import ASLogo from '../../pictures/as_plain_bw.png';
+import ASLogo from '../../assets/images/as_plain_bw.png';
 
 export const Navigation = () => {
   return (
     <div>
-        <LogoBanner>
-            <Logo>
-              <img src={ASLogo} alt="Logo" style={{ width: "54.2px", height: "54.2px" }} />
-            </Logo>
-            <TitleText>
-              AS-Kilta 25 vuosijuhla
-            </TitleText>
-        </LogoBanner>
+      <LogoBanner>
+        <TitleText>Automaatio- ja systeemitekniikan killan 25. juhlavuosi</TitleText>
+      </LogoBanner>
       {/* A "layout route" is a good place to put markup you want to
             share across all the pages on your site, like navigation. */}
       <NavBar>
         <>
           <StyledLink to="/">Home</StyledLink>
         </>
-        <>
-          <StyledLink to="/colors">Colors</StyledLink>
-        </>
+        <Logo>
+          <img src={ASLogo} alt="Logo" style={{ width: '30px', height: '30px' }} />
+        </Logo>
         <>
           <StyledLink to="/timeline">Timeline</StyledLink>
         </>
@@ -49,22 +44,30 @@ export const Navigation = () => {
 const LogoBanner = styled.div`
   display: flex;
   width: 100%;
-  background-color: #F5F5F5;
+  background-color: #26123f;
   justify-content: space-between;
 `;
 
 const Logo = styled.div`
   align-self: flex-start;
+  padding: 5px;
 `;
 
 const TitleText = styled.div`
   display: flex;
   margin: auto;
   align-self: center;
-  font-size: 22px;
+  font-size: 14px;
+  color: #bdadcc;
+  font-weight: 300;
+  padding-bottom: 2px;
+  @media only screen and (min-width: 500px) {
+    font-size: 18px;
+  }
 `;
 
 const NavBar = styled.nav`
+  z-index: 1;
   position: sticky;
   top: 0;
   display: flex;
@@ -74,18 +77,20 @@ const NavBar = styled.nav`
   justify-content: space-evenly;
   font-size: 22px;
   align-items: center;
-  background-color: ${p => p.theme.colors.asPurple};
+  background-color: #baa5da;
   padding: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 5 0 10px rgba(0, 0, 0, 0.1);
 `;
 
 const StyledLink = styled(Link)`
   background-color: transparent;
-  color: #ffc0cb;
+  color: #1f0437;
   text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
 
   &:hover {
-    color: #FFFFFF;
-    text-shadow: 0px 0px 1px white;
+    color: #53188b;
+    text-shadow: 0px 0px 1px #dbc0e9;
   }
 `;
