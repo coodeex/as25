@@ -44,49 +44,6 @@ const lightColors = {
   background: '#161616', // app main background
 };
 
-// TODO: fine-tune dark mode colors (eg. update vibrancy)
-const darkColors = {
-  // Brand colors
-  primary: '#009A48',
-  primaryText: '#1cff87',
-  primaryMuted: '#24392a',
-  onPrimary: '#ffffff', // color when text/icon/etc is on primary color
-
-  // Informative colors
-  info: '#3B82F6',
-  infoText: '#81aef7',
-  infoMuted: '#1b2940',
-  success: '#10B981',
-  successText: '#1ee8a5',
-  successMuted: '#193328',
-  warn: '#FBBF24',
-  warnText: '#ffc93d',
-  warnMuted: '#40351a',
-  error: '#EF4444',
-  errorText: '#ff7070',
-  errorMuted: '#3e1c1d',
-
-  // Muted gray colors
-  muted1: '#8e8e93',
-  muted2: '#636366',
-  muted3: '#48484a',
-  muted4: '#3a3a3c',
-  muted5: '#2c2c2e',
-  muted6: '#1d1d1f',
-
-  // Interaction plus generic colors for text, surfaces, borders, etc.
-  text: '#FFFFFF',
-  textMuted: '#999999',
-  border: 'rgba(150, 150, 150, 0.3)',
-  hoverHighlight: 'rgba(150,150,150,0.08)',
-  activeHighlight: 'rgba(150,150,150,0.2)',
-  focusRing: '#009A48',
-  backdrop: 'rgba(0,0,0,0.5)', // modal backdrop etc.
-  surface: '#222222', // cards, sidebars, navbars, etc.
-  elevated: '#333333', // modals, drawers, etc.
-  background: '#111111', // app main background
-};
-
 const rem = (px: number) => `${px / 16}rem`;
 const em = (px: number) => `${px / 16}em`;
 
@@ -168,11 +125,6 @@ export const theme = {
     medium: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)', // prettier-ignore
     large: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)', // prettier-ignore
   },
-};
-
-export const darkTheme = {
-  ...theme,
-  colors: darkColors,
 };
 
 export type Theme = typeof theme;
