@@ -26,3 +26,32 @@ docker run --rm -p 3284:3284 --name jec jeec:latest
 server
 docker build -f Dockerfile.build -t jeees .
 docker run --rm -p 5823:5823 --name jeeees jeees:latest
+
+
+
+want new npm library to client side?
+in as25/client
+-> npm i library_name
+-> $ docker ps                          ***
+-> find 1703858d2e8f   as25_client
+-> $ docker rm -f 1703858d2e8f
+-> $ docker-compose down / ctrl + c
+-> $ docker-compose up --build
+
+
+
+new feature?
+checkout to dev
+-> git pull, package.json changes? ->   ***
+-> create a new branch from dev
+-> develop the feature, many commits=good
+-> git merge origin/dev, (merges dev to feature branch)
+-> solve possible merge conflict
+-> publish branch, git push
+-> make pull request in github
+-> review
+-> merge pull request to dev
+-> delete branch
+
+delete merged branch locally
+git branch --merged | egrep -v "(^\*|master|main|dev|stag|demo|test)" | xargs git branch -d
