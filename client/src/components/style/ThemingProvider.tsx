@@ -2,7 +2,7 @@ import { createContext, ReactNode, useContext, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import { usePersistedState } from './persistance';
-import { darkTheme, theme as lightTheme } from './theme';
+import { theme } from './theme';
 
 type CurrentTheme = 'light' | 'dark';
 
@@ -17,7 +17,6 @@ const ThemingContext = createContext<undefined | AuthContextValue>(undefined);
 export const ThemingProvider = ({ children }: { children: ReactNode }) => {
   const [persistedTheme, setCurrentTheme] = usePersistedState<CurrentTheme>('@app/theme'); // prettier-ignore
   const currentTheme = persistedTheme || (window as any).CURRENT_THEME || 'light' as CurrentTheme; // prettier-ignore
-  const theme = currentTheme === 'light' ? lightTheme : darkTheme;
 
   const toggleTheme = () => {
     setCurrentTheme(currentTheme === 'dark' ? 'light' : 'dark');
