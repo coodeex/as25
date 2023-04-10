@@ -8,19 +8,19 @@ const TextBoxes = () => {
   return (
     <Boxes>
       <Box>
-        <Image src={Kuva1} style={{ transform: 'rotate(-5deg)' }} />
+        <Image image={Kuva1} style={{ transform: 'rotate(-5deg)' }} />
         <TitleText>
           Juhlavuosi tuo tullessaan paljon uusia tapahtumia ja aktiviteetteja!
         </TitleText>
       </Box>
       <BoxRight>
-        <Image src={Kuva2} style={{ transform: 'rotate(5deg)' }} />
+        <Image image={Kuva2} style={{ transform: 'rotate(5deg)' }} />
         <TitleText>
           Vuoden aikana tutustutaan AS historiaan sekä nykyiseen kiltakulttuuriin
         </TitleText>
       </BoxRight>
       <Box>
-        <Image src={Kuva3} style={{ transform: 'rotate(-5deg)' }} />
+        <Image image={Kuva3} style={{ transform: 'rotate(-5deg)' }} />
         <TitleText>
           Marraskuussa vuosi huipentuu Stimulaatioon, eli AS-killan vuosijuhlaan!
         </TitleText>
@@ -30,20 +30,23 @@ const TextBoxes = () => {
 };
 
 const Boxes = styled.div`
-  padding-bottom: 50px;
+  padding: 50px 0;
 `;
 
-const Image = styled.img`
+const Image = styled.div<{ image: string }>`
   padding: 40px 0;
-  max-width: 80vw;
+  width: 40vw;
+  height: 50vh;
+  background-image: url(${props => props.image || Kuva1});
+  background-repeat: no-repeat;
+  background-size: cover;
   @media only screen and (min-width: 1000px) {
     max-width: 50vw;
   }
 `;
 
 const Box = styled.div`
-  height: 90vh;
-
+  height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,7 +58,7 @@ const Box = styled.div`
 `;
 
 const BoxRight = styled.div`
-  height: 100vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;

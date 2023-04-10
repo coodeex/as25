@@ -1,6 +1,7 @@
 import { Link, Outlet } from 'react-router-dom';
 import styled from 'styled-components';
 import ASLogo from '../../assets/images/as_plain_bw.png';
+import CompanyLogos from './CompanyLogos';
 
 export const Navigation = () => {
   return (
@@ -18,8 +19,8 @@ export const Navigation = () => {
           <img src={ASLogo} alt="Logo" style={{ width: '30px', height: '30px' }} />
         </Logo>
 
-        <StyledLink to="/timeline">Stimulaatio</StyledLink>
-        <StyledLink to="/">Yleistä</StyledLink>
+        <StyledLink to="/stimulaatio">Stimulaatio</StyledLink>
+        <StyledLink to="/info">Yleistä</StyledLink>
       </NavBar>
 
       <hr />
@@ -28,6 +29,9 @@ export const Navigation = () => {
             so you can think about this <Outlet> as a placeholder for
             the child routes we defined above. */}
       <Outlet />
+      <Footer>
+        <CompanyLogos></CompanyLogos>
+      </Footer>
     </div>
   );
 };
@@ -84,4 +88,9 @@ const StyledLink = styled(Link)`
     color: #53188b;
     text-shadow: 0px 0px 1px #dbc0e9;
   }
+`;
+
+const Footer = styled.div`
+  height: max-content;
+  background-color: #baa5da;
 `;

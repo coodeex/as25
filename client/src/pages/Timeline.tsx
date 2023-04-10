@@ -12,7 +12,7 @@ const Timeline = () => {
         className="vertical-timeline-element--work"
         contentStyle={{ background: 'rgb(136, 95, 183)', color: '#fff' }}
         contentArrowStyle={{ borderRight: '7px solid  rgb(52, 4, 82)' }}
-        date="17.4.2023"
+        date="17.4."
         iconStyle={{ background: 'rgb(95, 51, 126)', color: '#fff' }}
       >
         <h3 className="vertical-timeline-element-title">Peli- ja ompeluilta</h3>
@@ -25,7 +25,7 @@ const Timeline = () => {
         className="vertical-timeline-element--work"
         contentStyle={{ background: 'rgb(145, 95, 183)', color: '#fff' }}
         contentArrowStyle={{ borderRight: '7px solid  rgb(52, 4, 82)' }}
-        date="18.4.2023"
+        date="18.4."
         iconStyle={{ background: 'rgb(105, 51, 126)', color: '#fff' }}
       >
         <h3 className="vertical-timeline-element-title">KiASmAS</h3>
@@ -39,7 +39,7 @@ const Timeline = () => {
         className="vertical-timeline-element--work"
         contentStyle={{ background: 'rgb(157, 95, 183)', color: '#fff' }}
         contentArrowStyle={{ borderRight: '7px solid  rgb(52, 4, 82)' }}
-        date="18.4.2023"
+        date="19.4."
         iconStyle={{ background: 'rgb(112, 51, 126)', color: '#fff' }}
       >
         <h3 className="vertical-timeline-element-title">Aasipiknik</h3>
@@ -53,7 +53,7 @@ const Timeline = () => {
         className="vertical-timeline-element--work"
         contentStyle={{ background: 'rgb(164, 95, 183)', color: '#fff' }}
         contentArrowStyle={{ borderRight: '7px solid  rgb(52, 4, 82)' }}
-        date="18.4.2023"
+        date="20.4."
         iconStyle={{ background: 'rgb(125, 51, 126)', color: '#fff' }}
       >
         <h3 className="vertical-timeline-element-title">Saunailta</h3>
@@ -67,7 +67,7 @@ const Timeline = () => {
         className="vertical-timeline-element--work"
         contentStyle={{ background: 'rgb(176, 95, 183)', color: '#fff' }}
         contentArrowStyle={{ borderRight: '7px solid  rgb(52, 4, 82)' }}
-        date="18.4.2023"
+        date="21.4."
         iconStyle={{ background: 'rgb(126, 51, 117)', color: '#fff' }}
       >
         <h3 className="vertical-timeline-element-title">Leffailta</h3>
@@ -81,7 +81,7 @@ const Timeline = () => {
         className="vertical-timeline-element--work"
         contentStyle={{ background: 'rgb(153, 66, 143)', color: '#fff' }}
         contentArrowStyle={{ borderRight: '7px solid  rgb(52, 4, 82)' }}
-        date="18.4.2023"
+        date="TBA"
         iconStyle={{ background: 'rgb(104, 35, 84)', color: '#fff' }}
       >
         <h3 className="vertical-timeline-element-title">Eskalaatio</h3>
@@ -96,7 +96,7 @@ const Timeline = () => {
         className="vertical-timeline-element--work"
         contentStyle={{ background: 'rgb(133, 55, 124)', color: '#fff' }}
         contentArrowStyle={{ borderRight: '7px solid  rgb(52, 4, 82)' }}
-        date="18.4.2023"
+        date="TBA"
         iconStyle={{ background: 'rgb(84, 28, 68)', color: '#fff' }}
       >
         <h3 className="vertical-timeline-element-title">AS-killan kesäpäivät</h3>
@@ -111,13 +111,11 @@ const Timeline = () => {
         className="vertical-timeline-element--work"
         contentStyle={{ background: 'rgb(133, 55, 124)', color: '#fff' }}
         contentArrowStyle={{ borderRight: '7px solid  rgb(52, 4, 82)' }}
-        date="18.4.2023"
+        date="20.-25.11."
         iconStyle={{ background: 'rgb(84, 28, 68)', color: '#fff' }}
       >
         <h3 className="vertical-timeline-element-title">Stimuviikko</h3>
-        <h5 className="vertical-timeline-element-subtitle">
-          Everything, everywhere all during 20-25.11.
-        </h5>
+        <h5 className="vertical-timeline-element-subtitle">Everything, everywhere</h5>
         <p>
           Stimuviikko on vuosijuhlan hypeintä aikaa! Voin luvata, että tämä viikko on
           täynnä mitä mahtavinta aASeilua!
@@ -127,7 +125,7 @@ const Timeline = () => {
         className="vertical-timeline-element--work"
         contentStyle={{ background: 'rgb(113, 45, 106)', color: '#fff' }}
         contentArrowStyle={{ borderRight: '7px solid  rgb(52, 4, 82)' }}
-        date="18.4.2023"
+        date="24.11."
         iconStyle={{ background: 'rgb(69, 20, 63)', color: '#fff' }}
       >
         <h3 className="vertical-timeline-element-title">25. Stimulaatio</h3>
@@ -141,7 +139,7 @@ const Timeline = () => {
         className="vertical-timeline-element--work"
         contentStyle={{ background: 'rgb(113, 45, 106)', color: '#fff' }}
         contentArrowStyle={{ borderRight: '7px solid  rgb(52, 4, 82)' }}
-        date="18.4.2023"
+        date="25.11."
         iconStyle={{ background: 'rgb(69, 20, 63)', color: '#fff' }}
       >
         <h3 className="vertical-timeline-element-title">Stillis</h3>
