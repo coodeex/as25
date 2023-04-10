@@ -11,24 +11,15 @@ export const Navigation = () => {
       {/* A "layout route" is a good place to put markup you want to
             share across all the pages on your site, like navigation. */}
       <NavBar>
-        <>
-          <StyledLink to="/">Home</StyledLink>
-        </>
+        <StyledLink to="/">Etusivu</StyledLink>
+        <StyledLink to="/timeline">Tapahtumat</StyledLink>
+
         <Logo>
           <img src={ASLogo} alt="Logo" style={{ width: '30px', height: '30px' }} />
         </Logo>
-        <>
-          <StyledLink to="/timeline">Timeline</StyledLink>
-        </>
-        {/* <li>
-          <Link to="/chat">Chat</Link>
-        </li>
-        <li>
-          <Link to="/components">Sandbox</Link>
-        </li>
-        <li>
-          <Link to="/game">Game</Link>
-        </li> */}
+
+        <StyledLink to="/timeline">Stimulaatio</StyledLink>
+        <StyledLink to="/">Yleistä</StyledLink>
       </NavBar>
 
       <hr />
