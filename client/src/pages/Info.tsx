@@ -7,19 +7,19 @@ const Info = () => {
       <ResponsiblePerson>Vastuuhenkilöt</ResponsiblePerson>
       <PeopleContainer>
         <Person>
-          <p>AS25-juhlavuoden Kvartaalimestari</p>
-          <p>Kiira Metsoila</p>
-          <p>TG: @kiiraiitu</p>
+          <h2>AS25-juhlavuoden Kvartaalimestari</h2>
+          <div>Kiira Metsoila</div>
+          <div>TG: @kiiraiitu</div>
         </Person>
         <Person>
-          <p>Stimulantti</p>
-          <p>Meri Hilden</p>
-          <p>TG: @Merinomainen</p>
+          <h2>Stimulantti</h2>
+          <div>Meri Hilden</div>
+          <div>TG: @Merinomainen</div>
         </Person>
         <Person>
-          <p>Stimulantti</p>
-          <p>Meri Hiipakka</p>
-          <p>TG: @Merisku</p>
+          <h2>Stimulantti</h2>
+          <div>Meri Hiipakka</div>
+          <div>TG: @Merisku</div>
         </Person>
       </PeopleContainer>
     </InfoContainer>
@@ -30,7 +30,7 @@ const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 `;
 
 const Title = styled.div`
@@ -47,15 +47,29 @@ const ResponsiblePerson = styled.div`
 `;
 
 const PeopleContainer = styled.div`
-  width: 60%;
+  width: 100%;
   padding-top: 20px;
+  @media only screen and (min-width: 700px) {
+    width: 80%;
+    max-width: 750px;
+  }
 `;
 
 const Person = styled.div`
-  display: grid;
-  grid-template-columns: 50% 25% auto;
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+  align-items: center;
   color: #baa5da;
-  font-size: 26px;
+  text-align: center;
+  padding-bottom: 40px;
+  @media only screen and (min-width: 700px) {
+    display: grid;
+    text-align: left;
+    grid-template-columns: 45% 30% auto;
+    color: #baa5da;
+    font-size: auto;
+  }
 `;
 
 export default Info;

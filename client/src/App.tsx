@@ -14,8 +14,11 @@ import Home from './pages/Home';
 import Timeline from './pages/Timeline';
 import Stimulaatio from './pages/Stimulaatio';
 import Info from './pages/Info';
+import { useState } from 'react';
 
 const App = () => {
+  const [language, setLanguage] = useState('FI');
+
   return (
     <PageWrapper>
       {/* <Nav /> */}

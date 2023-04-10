@@ -17,7 +17,7 @@ const CompanyLogos = () => {
 };
 
 const Container = styled.div`
-  display: inline;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
@@ -27,9 +27,8 @@ const Container = styled.div`
   }
 `;
 
-const TitleText = styled.span`
+const TitleText = styled.h1`
   color: #37105a;
-  font-size: 5vh;
   font-family: 'Fugaz One', serif;
   padding: 2rem;
 `;

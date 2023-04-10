@@ -4,6 +4,7 @@ import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
+import styled from 'styled-components';
 
 const Timeline = () => {
   return (
@@ -15,7 +16,9 @@ const Timeline = () => {
         date="17.4."
         iconStyle={{ background: 'rgb(95, 51, 126)', color: '#fff' }}
       >
-        <h3 className="vertical-timeline-element-title">Peli- ja ompeluilta</h3>
+        <EventTitle className="vertical-timeline-element-title">
+          Peli- ja ompeluilta
+        </EventTitle>
         <h5 className="vertical-timeline-element-subtitle">ASn Wappukontti Alvarilla</h5>
         <p>
           Pelailua ja ompelua yhdessä muiden Wappua odottelevien aASien! Klo. 18 alkaen
@@ -28,7 +31,7 @@ const Timeline = () => {
         date="18.4."
         iconStyle={{ background: 'rgb(105, 51, 126)', color: '#fff' }}
       >
-        <h3 className="vertical-timeline-element-title">KiASmAS</h3>
+        <EventTitle className="vertical-timeline-element-title">KiASmAS</EventTitle>
         <h5 className="vertical-timeline-element-subtitle">Kiasma, Helsinki</h5>
         <p>
           Kylttyyrielämys Helsingin upeimmassa museossa! Ilmainen, mutta ilmoittautuminen
@@ -42,7 +45,7 @@ const Timeline = () => {
         date="19.4."
         iconStyle={{ background: 'rgb(112, 51, 126)', color: '#fff' }}
       >
-        <h3 className="vertical-timeline-element-title">Aasipiknik</h3>
+        <EventTitle className="vertical-timeline-element-title">Aasipiknik</EventTitle>
         <h5 className="vertical-timeline-element-subtitle">ASn Wappukontti Alvarilla</h5>
         <p>
           Tule rapsuttelemaan ihka oikeita aaseja, siis niitä eläimiä! Ja piknikkiinhän
@@ -56,7 +59,7 @@ const Timeline = () => {
         date="20.4."
         iconStyle={{ background: 'rgb(125, 51, 126)', color: '#fff' }}
       >
-        <h3 className="vertical-timeline-element-title">Saunailta</h3>
+        <EventTitle className="vertical-timeline-element-title">Saunailta</EventTitle>
         <h5 className="vertical-timeline-element-subtitle">Ossinsauna</h5>
         <p>
           Mitä olisikaan hyvinvointiviikko ilman saunailtaa?! Tule nauttimaan löylyistä
@@ -70,7 +73,7 @@ const Timeline = () => {
         date="21.4."
         iconStyle={{ background: 'rgb(126, 51, 117)', color: '#fff' }}
       >
-        <h3 className="vertical-timeline-element-title">Leffailta</h3>
+        <EventTitle className="vertical-timeline-element-title">Leffailta</EventTitle>
         <h5 className="vertical-timeline-element-subtitle">Kinopoli</h5>
         <p>
           Mitä leffaa katsotaan? Sitä nettisivukoodari ei tiedä, mutta tulet varmasti
@@ -84,7 +87,7 @@ const Timeline = () => {
         date="TBA"
         iconStyle={{ background: 'rgb(104, 35, 84)', color: '#fff' }}
       >
-        <h3 className="vertical-timeline-element-title">Eskalaatio</h3>
+        <EventTitle className="vertical-timeline-element-title">Eskalaatio</EventTitle>
         <h5 className="vertical-timeline-element-subtitle">Paikka ja aika TBA</h5>
         <p>
           Eskalaatio on AS-killan puolivuotisjuhla, eli 24,5-vuotisjuhla tänä vuonna. Huhu
@@ -99,7 +102,9 @@ const Timeline = () => {
         date="TBA"
         iconStyle={{ background: 'rgb(84, 28, 68)', color: '#fff' }}
       >
-        <h3 className="vertical-timeline-element-title">AS-killan kesäpäivät</h3>
+        <EventTitle className="vertical-timeline-element-title">
+          AS-killan kesäpäivät
+        </EventTitle>
         <h5 className="vertical-timeline-element-subtitle">Paikka ja aika TBA</h5>
         <p>
           Tällaisetkin ovat tulossa pitkästä aikaa! Killan kesäpäivät ovat avoin tapahtuma
@@ -114,7 +119,7 @@ const Timeline = () => {
         date="20.-25.11."
         iconStyle={{ background: 'rgb(84, 28, 68)', color: '#fff' }}
       >
-        <h3 className="vertical-timeline-element-title">Stimuviikko</h3>
+        <EventTitle className="vertical-timeline-element-title">Stimuviikko</EventTitle>
         <h5 className="vertical-timeline-element-subtitle">Everything, everywhere</h5>
         <p>
           Stimuviikko on vuosijuhlan hypeintä aikaa! Voin luvata, että tämä viikko on
@@ -128,7 +133,9 @@ const Timeline = () => {
         date="24.11."
         iconStyle={{ background: 'rgb(69, 20, 63)', color: '#fff' }}
       >
-        <h3 className="vertical-timeline-element-title">25. Stimulaatio</h3>
+        <EventTitle className="vertical-timeline-element-title">
+          25. Stimulaatio
+        </EventTitle>
         <h5 className="vertical-timeline-element-subtitle">24.11.</h5>
         <p>
           Tämä akateeminen ja juhlavista juhlavin tapahtuma, eli AS-killan vuosijuhla,
@@ -142,7 +149,7 @@ const Timeline = () => {
         date="25.11."
         iconStyle={{ background: 'rgb(69, 20, 63)', color: '#fff' }}
       >
-        <h3 className="vertical-timeline-element-title">Stillis</h3>
+        <EventTitle className="vertical-timeline-element-title">Stillis</EventTitle>
         <h5 className="vertical-timeline-element-subtitle">25.11.</h5>
         <p>
           Tuliko Stimun jälkeen väsy? Ja ehkä vähän nälkäkin? Täällä voit chillailla ja
@@ -153,5 +160,9 @@ const Timeline = () => {
     </VerticalTimeline>
   );
 };
+
+const EventTitle = styled.h3`
+  font-family: 'Fugaz One', serif;
+`;
 
 export default Timeline;

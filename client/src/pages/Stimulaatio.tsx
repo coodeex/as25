@@ -22,31 +22,36 @@ const Stimulaatio = () => {
 
 const Container = styled.div`
   height: 1000px;
-  overflow: hidden;
 `;
 
 const Circle = styled.div`
   position: absolute;
-  top: 15%;
+  top: 25%;
   left: 50%;
-  width: 800px / 2;
-  height: 800px;
+  width: 400px / 2;
+  height: 400px;
   border-radius: 50%;
-  display: none;
+  display: flex;
   background-color: #e36c6c;
   justify-content: center;
   align-items: center;
   @media only screen and (min-width: 1000px) {
     display: flex;
+    top: 15%;
+    left: 50%;
+    width: 800px / 2;
+    height: 800px;
+    border-radius: 50%;
+    background-color: #e36c6c;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
 const StimuDate = styled.div`
   position: absolute;
-  width: 150px;
-  height: 150px;
   border-radius: 50%;
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   font-size: 102px;
@@ -82,11 +87,19 @@ const StimuText = styled.div`
 const StimuSpan = styled.span`
   position: absolute;
   left: 50%;
-  font-size: 65px;
+  left: 50%;
+  font-size: 25px;
   font-weight: 500;
   padding: 2px;
   font-family: monospace;
-  transform-origin: 0 400px;
+  transform-origin: 0 200px;
+  @media only screen and (min-width: 1000px) {
+    font-size: 65px;
+    font-weight: 500;
+    padding: 2px;
+    font-family: monospace;
+    transform-origin: 0 400px;
+  }
 `;
 
 export default Stimulaatio;
