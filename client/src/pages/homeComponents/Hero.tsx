@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import AS25Logo from '../../assets/images/mustaTausta.png';
 import '../../App.css';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const textleft = 'Tervetuloa mukaan aASien riemujuhlaan!';
   const [text, setText] = useState('');
+  const stimutext = ' Stimulaatio Stimulaatio Stimulaatio ';
 
   const typeWriter = (text: string, i = 0) => {
     if (i < textleft.length) {
@@ -29,9 +31,15 @@ const Hero = () => {
         <TextLeft>{text}</TextLeft>
         <TextCursor />
       </Container>
-      {/* <LogoContainer> */}
       <Logo src={AS25Logo} alt="Logo" />
-      {/* </LogoContainer> */}
+      <Circle to="/stimulaatio">
+        <StimuDate>24.11.</StimuDate>
+        <StimuText className="text">
+          {stimutext.split('').map((char, i) => (
+            <StimuSpan style={{ transform: `rotate(${i * 10}deg)` }}>{char}</StimuSpan>
+          ))}
+        </StimuText>
+      </Circle>
     </HeroContainer>
   );
 };
@@ -46,16 +54,6 @@ const HeroContainer = styled.div`
   }
 `;
 
-// const LogoContainer = styled.div`
-//   position: absolute;
-//   width: 100vw;
-//   height: 80vh;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   border: 0;
-// `;
-
 const MobileContainer = styled.div`
   display: flex;
   width: 100%;
@@ -65,9 +63,10 @@ const MobileContainer = styled.div`
 
 const MobileLogo = styled.img`
   padding-left: 40px;
-  max-width: 100vw;
-  max-height: 600px;
+  width: 100%;
   margin-left: -50px;
+  object-fit: contain;
+  max-height: 600px;
   @media only screen and (min-width: 1000px) {
     display: none;
     height: 80vh;
@@ -75,20 +74,22 @@ const MobileLogo = styled.img`
 `;
 
 const Logo = styled.img`
-  max-width: 99vw;
   display: none;
-  height: 80vh;
+  max-width: 100%;
+  object-fit: contain;
   @media only screen and (min-width: 1000px) {
     display: inline;
+    max-width: 50%;
   }
 `;
 
 const Container = styled.div`
   display: flex;
   padding: 0 0 0 3vw;
-  max-height: 600px;
+  max-width: 100%;
   @media only screen and (min-width: 1000px) {
     padding: 20vh 0 0 3vw;
+    max-width: 50%;
   }
 `;
 
@@ -105,8 +106,9 @@ const TextCursor = styled.span`
 
 const TextLeft = styled.span`
   color: #baa5da;
-  font-size: 4vh;
   width: 90vw;
+  font-size: 30px;
+  height: 90px;
   text-align: center;
   font-family: 'Fugaz One', serif;
   @media only screen and (min-width: 1000px) {
@@ -114,6 +116,69 @@ const TextLeft = styled.span`
     width: 45vw;
     text-align: left;
   }
+`;
+
+const Circle = styled(Link)`
+  position: absolute;
+  top: 69vh;
+  left: 25vw;
+  width: 200px / 2;
+  height: 200px;
+  border-radius: 50%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  @media only screen and (min-width: 1000px) {
+    display: flex;
+  }
+`;
+
+const StimuDate = styled.div`
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 42px;
+  font-weight: 800;
+  color: #ffffff;
+  font-family: 'Fugaz One', serif;
+  @media only screen and (min-width: 1000px) {
+    display: flex;
+  }
+`;
+
+const rotateText = keyframes`
+  0% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0deg)
+  }
+`;
+
+const StimuText = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  animation: ${rotateText} 8s linear infinite;
+  @media only screen and (min-width: 1000px) {
+    display: inline-block;
+  }
+`;
+
+const StimuSpan = styled.span`
+  position: absolute;
+  left: 50%;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 2px;
+  font-family: monospace;
+  transform-origin: 0 100px;
 `;
 
 export default Hero;
