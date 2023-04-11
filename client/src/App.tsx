@@ -12,8 +12,13 @@ import { Chat } from './components/telegram/Chat';
 import Colors from './pages/Colors';
 import Home from './pages/Home';
 import Timeline from './pages/Timeline';
+import Stimulaatio from './pages/Stimulaatio';
+import Info from './pages/Info';
+import { useState } from 'react';
 
 const App = () => {
+  const [language, setLanguage] = useState('FI');
+
   return (
     <PageWrapper>
       {/* <Nav /> */}
@@ -22,6 +27,8 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="colors" element={<Colors />} />
           <Route path="timeline" element={<Timeline />} />
+          <Route path="stimulaatio" element={<Stimulaatio />} />
+          <Route path="info" element={<Info />} />
           {/* <Route path="chat" element={<Chat />} /> */}
           {/* <Route path="components" element={<ComponentSandbox />} /> */}
           {/* <Route path="game" element={<Game />} /> */}

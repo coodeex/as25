@@ -2,7 +2,7 @@ import type { CSSObject } from 'styled-components';
 
 const lightColors = {
   // Brand colors
-  primary: '#784478',
+  primary: '#baa5da',
   primaryText: '#015227',
   primaryMuted: '#d6ebdb',
   onPrimary: '#ffffff', // color when text/icon/etc is on primary color

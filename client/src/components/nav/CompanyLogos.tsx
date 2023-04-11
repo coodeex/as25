@@ -17,21 +17,20 @@ const CompanyLogos = () => {
 };
 
 const Container = styled.div`
-  display: inline;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  padding-bottom: 20vh;
+  padding-bottom: 200px;
   @media only screen and (min-width: 1000px) {
     display: flex;
   }
 `;
 
-const TitleText = styled.span`
-  color: #baa5da;
-  font-size: 5vh;
+const TitleText = styled.h1`
+  color: #37105a;
   font-family: 'Fugaz One', serif;
-  padding: 0 3vw 0 3vw;
+  padding: 2rem;
 `;
 
 const LogoList = styled.div`

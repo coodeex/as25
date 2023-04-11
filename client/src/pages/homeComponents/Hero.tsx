@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import AS25Logo from '../../assets/images/mustaTausta.png';
 import '../../App.css';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const textleft = 'Tervetuloa mukaan aASien riemujuhlaan!';
   const [text, setText] = useState('');
-  const stimutext = " Stimulaatio Stimulaatio Stimulaatio "
+  const stimutext = ' Stimulaatio Stimulaatio Stimulaatio ';
 
   const typeWriter = (text: string, i = 0) => {
     if (i < textleft.length) {
@@ -31,12 +32,12 @@ const Hero = () => {
         <TextCursor />
       </Container>
       <Logo src={AS25Logo} alt="Logo" />
-      <Circle>
+      <Circle to="/stimulaatio">
         <StimuDate>24.11.</StimuDate>
-        <StimuText className='text'>
-          {stimutext.split('').map((char, i) => 
-          <StimuSpan style={{transform: `rotate(${i*10}deg)`}}>{char}</StimuSpan>
-          )}
+        <StimuText className="text">
+          {stimutext.split('').map((char, i) => (
+            <StimuSpan style={{ transform: `rotate(${i * 10}deg)` }}>{char}</StimuSpan>
+          ))}
         </StimuText>
       </Circle>
     </HeroContainer>
@@ -105,8 +106,9 @@ const TextCursor = styled.span`
 
 const TextLeft = styled.span`
   color: #baa5da;
-  font-size: 2vw;
   width: 90vw;
+  font-size: 30px;
+  height: 90px;
   text-align: center;
   font-family: 'Fugaz One', serif;
   @media only screen and (min-width: 1000px) {
@@ -116,7 +118,7 @@ const TextLeft = styled.span`
   }
 `;
 
-const Circle = styled.div`
+const Circle = styled(Link)`
   position: absolute;
   top: 69vh;
   left: 25vw;
@@ -124,13 +126,12 @@ const Circle = styled.div`
   height: 200px;
   border-radius: 50%;
   display: none;
-  background-color: #e36c6c;
   justify-content: center;
   align-items: center;
   @media only screen and (min-width: 1000px) {
     display: flex;
   }
-`
+`;
 
 const StimuDate = styled.div`
   position: absolute;
@@ -147,7 +148,7 @@ const StimuDate = styled.div`
   @media only screen and (min-width: 1000px) {
     display: flex;
   }
-`
+`;
 
 const rotateText = keyframes`
   0% {
@@ -157,7 +158,7 @@ const rotateText = keyframes`
   100% {
     transform: rotate(0deg)
   }
-`
+`;
 
 const StimuText = styled.div`
   position: absolute;
@@ -168,8 +169,7 @@ const StimuText = styled.div`
   @media only screen and (min-width: 1000px) {
     display: inline-block;
   }
-`
-
+`;
 
 const StimuSpan = styled.span`
   position: absolute;
@@ -179,6 +179,6 @@ const StimuSpan = styled.span`
   padding: 2px;
   font-family: monospace;
   transform-origin: 0 100px;
-`
+`;
 
 export default Hero;
