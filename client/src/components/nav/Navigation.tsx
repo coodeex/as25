@@ -34,6 +34,7 @@ export const Navigation = () => {
       <Outlet />
       <Footer>
         <CompanyLogos></CompanyLogos>
+        <p>Website by Veera, Juha, Miska and Kassu</p>
       </Footer>
     </div>
   );
@@ -114,4 +115,11 @@ const Footer = styled.div`
   overflow: hidden;
   height: max-content;
   background-color: #baa5da;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #1f0437;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 18px;
 `;

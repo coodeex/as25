@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import testi1 from '../../assets/images/companyLogos/testi1.png';
+import tter from '../../assets/images/companyLogos/tter_logo.svg';
 import testi2 from '../../assets/images/companyLogos/testi2.png';
 import testi3 from '../../assets/images/companyLogos/testi3.png';
 
@@ -8,9 +8,7 @@ const CompanyLogos = () => {
     <Container>
       <TitleText>Yhteistyökumppanit</TitleText>
       <LogoList>
-        <Logo src={testi1} alt="testi1" style={{ width: '200px', height: '100px' }} />
-        <Logo src={testi2} alt="testi2" style={{ width: '200px', height: '100px' }} />
-        <Logo src={testi3} alt="testi3" style={{ width: '200px', height: '100px' }} />
+        <Logo src={tter} alt="testi1" style={{ width: '200px' }} />
       </LogoList>
     </Container>
   );
