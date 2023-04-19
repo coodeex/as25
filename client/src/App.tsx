@@ -1,5 +1,6 @@
 import './App.css';
 
+import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -8,16 +9,17 @@ import { NoMatch } from './components/common/NoMatch';
 import { Game } from './components/game/Game';
 import { HotToast } from './components/HotToast';
 import { Navigation } from './components/nav/Navigation';
+import { useScrollToTop } from './components/nav/useScrollToTop';
 import { Chat } from './components/telegram/Chat';
 import Colors from './pages/Colors';
 import Home from './pages/Home';
-import Timeline from './pages/Timeline';
-import Stimulaatio from './pages/Stimulaatio';
 import Info from './pages/Info';
-import { useState } from 'react';
+import Stimulaatio from './pages/Stimulaatio';
+import Timeline from './pages/Timeline';
 
 const App = () => {
   const [language, setLanguage] = useState('FI');
+  useScrollToTop();
 
   return (
     <PageWrapper>
