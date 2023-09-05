@@ -84,11 +84,11 @@ const Timeline = () => {
         className="vertical-timeline-element--work"
         contentStyle={{ background: 'rgb(153, 66, 143)', color: '#fff' }}
         contentArrowStyle={{ borderRight: '7px solid  rgb(52, 4, 82)' }}
-        date="TBA"
+        date="26.5"
         iconStyle={{ background: 'rgb(104, 35, 84)', color: '#fff' }}
       >
         <EventTitle className="vertical-timeline-element-title">Eskalaatio</EventTitle>
-        <h5 className="vertical-timeline-element-subtitle">Paikka ja aika TBA</h5>
+        <h5 className="vertical-timeline-element-subtitle">Paikka ja aika</h5>
         <p>
           Eskalaatio on AS-killan puolivuotisjuhla, eli 24,5-vuotisjuhla tänä vuonna. Huhu
           kertoo, että tän vuoden Eskalaatio on jotain aivan uutta ja hienoa. Kannattaa
@@ -97,15 +97,15 @@ const Timeline = () => {
       </VerticalTimelineElement>
       <VerticalTimelineElement
         className="vertical-timeline-element--work"
-        contentStyle={{ background: 'rgb(133, 55, 124)', color: '#fff' }}
+        contentStyle={{ background: 'rgb(153, 66, 143)', color: '#fff' }}
         contentArrowStyle={{ borderRight: '7px solid  rgb(52, 4, 82)' }}
-        date="TBA"
-        iconStyle={{ background: 'rgb(84, 28, 68)', color: '#fff' }}
+        date="25.-27.8."
+        iconStyle={{ background: 'rgb(104, 35, 84)', color: '#fff' }}
       >
         <EventTitle className="vertical-timeline-element-title">
           AS-killan kesäpäivät
         </EventTitle>
-        <h5 className="vertical-timeline-element-subtitle">Paikka ja aika TBA</h5>
+        <h5 className="vertical-timeline-element-subtitle">Paikka ja aika</h5>
         <p>
           Tällaisetkin ovat tulossa pitkästä aikaa! Killan kesäpäivät ovat avoin tapahtuma
           kaikille. Joten, jos kiltakavereita tulee ikävä kesän aikana, niin tää tapahtuma
@@ -116,8 +116,60 @@ const Timeline = () => {
         className="vertical-timeline-element--work"
         contentStyle={{ background: 'rgb(133, 55, 124)', color: '#fff' }}
         contentArrowStyle={{ borderRight: '7px solid  rgb(52, 4, 82)' }}
-        date="20.-25.11."
+        date="16.10"
         iconStyle={{ background: 'rgb(84, 28, 68)', color: '#fff' }}
+      >
+        <EventTitle className="vertical-timeline-element-title">Mocktail workshop</EventTitle>
+        <h5 className="vertical-timeline-element-subtitle">Kylän olohuone</h5>
+        <p>
+          Tule harjoittelemaan mocktailien tekoa Kylän olohuoneelle muiden aasien kanssa rennoissa tunnelmissa.
+        </p>
+      </VerticalTimelineElement>
+      <VerticalTimelineElement
+        className="vertical-timeline-element--work"
+        contentStyle={{ background: 'rgb(133, 55, 124)', color: '#fff' }}
+        contentArrowStyle={{ borderRight: '7px solid  rgb(52, 4, 82)' }}
+        date="sunnuntaisin: 23.10 - joulukuun puoliväli"
+        iconStyle={{ background: 'rgb(84, 28, 68)', color: '#fff' }}
+      >
+        <EventTitle className="vertical-timeline-element-title">AS25 näyttely</EventTitle>
+        <h5 className="vertical-timeline-element-subtitle">Opiskelijakulttuurimuseo, sunnuntaisin klo 14-16</h5>
+        <p>
+          Mullistava näyttely Opiskelijakulttuurimuseolla AS25 juhlavuoden kunniaksi. Kaikkien aasiksi itsensä tuntevien kantsii käydä tsekkaamassa.
+        </p>
+      </VerticalTimelineElement>
+      <VerticalTimelineElement
+        className="vertical-timeline-element--work"
+        contentStyle={{ background: 'rgb(133, 55, 124)', color: '#fff' }}
+        contentArrowStyle={{ borderRight: '7px solid  rgb(52, 4, 82)' }}
+        date="27.10"
+        iconStyle={{ background: 'rgb(84, 28, 68)', color: '#fff' }}
+      >
+        <EventTitle className="vertical-timeline-element-title">KiASma</EventTitle>
+        <h5 className="vertical-timeline-element-subtitle">Kiasma</h5>
+        <p>
+          Aasit suuntautuvat nauttimaan modernista taiteesta Kiasman taidemuseoon!
+        </p>
+      </VerticalTimelineElement>
+      <VerticalTimelineElement
+        className="vertical-timeline-element--work"
+        contentStyle={{ background: 'rgb(133, 55, 124)', color: '#fff' }}
+        contentArrowStyle={{ borderRight: '7px solid  rgb(52, 4, 82)' }}
+        date="13.11"
+        iconStyle={{ background: 'rgb(84, 28, 68)', color: '#fff' }}
+      >
+        <EventTitle className="vertical-timeline-element-title">AS25 Hengaus</EventTitle>
+        <h5 className="vertical-timeline-element-subtitle">Kylän olohuone</h5>
+        <p>
+          Tule hengailemaan rennossa juhlatunnelmassa Kylän olohuoneella!
+        </p>
+      </VerticalTimelineElement>
+      <VerticalTimelineElement
+        className="vertical-timeline-element--work"
+        contentStyle={{ background: 'rgb(113, 45, 106)', color: '#fff' }}
+        contentArrowStyle={{ borderRight: '7px solid  rgb(52, 4, 82)' }}
+        date="20.-25.11."
+        iconStyle={{ background: 'rgb(69, 20, 63)', color: '#fff' }}
       >
         <EventTitle className="vertical-timeline-element-title">Stimuviikko</EventTitle>
         <h5 className="vertical-timeline-element-subtitle">Everything, everywhere</h5>
@@ -130,8 +182,34 @@ const Timeline = () => {
         className="vertical-timeline-element--work"
         contentStyle={{ background: 'rgb(113, 45, 106)', color: '#fff' }}
         contentArrowStyle={{ borderRight: '7px solid  rgb(52, 4, 82)' }}
-        date="24.11."
+        date="21.11"
         iconStyle={{ background: 'rgb(69, 20, 63)', color: '#fff' }}
+      >
+        <EventTitle className="vertical-timeline-element-title">Cocktail-tilaisuus</EventTitle>
+        <h5 className="vertical-timeline-element-subtitle">Opiskelijakulttuurimuseo</h5>
+        <p>
+          Hieno Cocktail-tilaisuus Opiskelijakulttuurimuseolla, josta löytyy myös AS25 näyttely!
+        </p>
+      </VerticalTimelineElement>
+      <VerticalTimelineElement
+        className="vertical-timeline-element--work"
+        contentStyle={{ background: 'rgb(113, 45, 106)', color: '#fff' }}
+        contentArrowStyle={{ borderRight: '7px solid  rgb(52, 4, 82)' }}
+        date="23.11"
+        iconStyle={{ background: 'rgb(69, 20, 63)', color: '#fff' }}
+      >
+        <EventTitle className="vertical-timeline-element-title">AS25 Hyvinvointipäivä</EventTitle>
+        <h5 className="vertical-timeline-element-subtitle">TBA</h5>
+        <p>
+          Tule nauttimaan hyvinvoinnista je kehittämään yleistä hyvinvointia muiden aasien kanssa.
+        </p>
+      </VerticalTimelineElement>
+      <VerticalTimelineElement
+        className="vertical-timeline-element--work"
+        contentStyle={{ background: 'rgb(93, 35, 94)', color: '#fff' }}
+        contentArrowStyle={{ borderRight: '7px solid  rgb(52, 4, 82)' }}
+        date="24.11."
+        iconStyle={{ background: 'rgb(64, 12, 58)', color: '#fff' }}
       >
         <EventTitle className="vertical-timeline-element-title">
           25. Stimulaatio
@@ -144,10 +222,10 @@ const Timeline = () => {
       </VerticalTimelineElement>
       <VerticalTimelineElement
         className="vertical-timeline-element--work"
-        contentStyle={{ background: 'rgb(113, 45, 106)', color: '#fff' }}
+        contentStyle={{ background: 'rgb(93, 35, 94)', color: '#fff' }}
         contentArrowStyle={{ borderRight: '7px solid  rgb(52, 4, 82)' }}
         date="25.11."
-        iconStyle={{ background: 'rgb(69, 20, 63)', color: '#fff' }}
+        iconStyle={{ background: 'rgb(64, 12, 58)', color: '#fff' }}
       >
         <EventTitle className="vertical-timeline-element-title">Stillis</EventTitle>
         <h5 className="vertical-timeline-element-subtitle">25.11.</h5>
