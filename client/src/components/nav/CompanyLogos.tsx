@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import tter from '../../assets/images/companyLogos/tter_logo.svg';
+import aTalent from '../../assets/images/companyLogos/aTalent_Logo_Black.png'
 import testi2 from '../../assets/images/companyLogos/testi2.png';
 import testi3 from '../../assets/images/companyLogos/testi3.png';
 
@@ -9,6 +10,7 @@ const CompanyLogos = () => {
       <TitleText>Yhteistyökumppanit</TitleText>
       <LogoList>
         <Logo src={tter} alt="testi1" style={{ width: '200px' }} />
+        <Logo src={aTalent} alt="testi1" style={{ height: '85px', width: '300px' }}/>
       </LogoList>
     </Container>
   );
@@ -35,6 +37,8 @@ const LogoList = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
 `;
 
 const Logo = styled.img`
