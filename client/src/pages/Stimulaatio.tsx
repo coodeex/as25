@@ -80,38 +80,45 @@ const Stimulaatio = () => {
 
 const SwitchButton = styled.button`
   color: white;
-  font-size: 20px;
+  font-size: 18px;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
+  @media only screen and (min-width: 1000px) {
+    font-size: 20px;
+  }
 `;
 
 const InfoText = styled.div`
   color: white;
-  font-size: 25px;
+  font-size: 18px;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   padding-bottom: 100px;
+  @media only screen and (min-width: 1000px) {
+    font-size: 25px;
+  }
 `;
 
 const English = styled.div`
   color: white;
-  font-size: 25px;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
 `;
 
 const Finnish = styled.div`
   color: white;
-  font-size: 25px;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
 `;
 
 const Hook = styled.div`
-  font-size: 50px;
+  font-size: 40px;
   color: #baa5da;
   font-family: 'Fugaz One', serif;
   padding-bottom: 0px;
+  @media only screen and (min-width: 1000px) {
+    font-size: 50px;
+  }
 `;
 
 const Container = styled.div`
