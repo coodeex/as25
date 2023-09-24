@@ -24,8 +24,8 @@ const Stimulaatio = () => {
     <p>Tervetuloa juhlimaan 25-vuotiasta Automaatio- ja systeemitekniikan kiltaa Stimulaatioon perjantaina 24. marraskuuta 2023.</p>
 
     <p>Korkkaamme juhlan tyylikk&auml;&auml;sti cocktailtilaisuudella osoitteessa Tivolitie 10 klo 15 alkaen, jonka j&auml;lkeen juhlinta jatkuu loisteliaalla p&auml;&auml;juhlatilaisuudella Ravintola T&ouml;&ouml;l&ouml;ss&auml;. T&auml;m&auml;n j&auml;lkeen jatkoilla p&auml;&auml;see tanssimaan y&ouml;n pikkutunneille asti ja juhlinta jatkuu lauantaina 25.11. rentouttavan Stilliksen merkeiss&auml; Otakaari 20:ssa. Ilmoittautuminen on auki kutsuvieraille 11.9.-18.9.2022. ja avoin ilmoittautuminen 20.9.-30.9. 
-    Itse ilmoittautuminen tapahtuu kide.app-sovelluksen kautta osoitteessa 
-    <a href='https://kide.app/events/b0e3f085-ccd5-4c21-a4a4-a8645304e83f' 
+    Itse ilmoittautuminen tapahtuu kide.app-sovelluksen kautta osoitteessa <a 
+    href='https://kide.app/events/b0e3f085-ccd5-4c21-a4a4-a8645304e83f' 
     style={{textDecoration: "underline", color: '#baa5da'}} target="_blank">https://kide.app/events/b0e3f085-ccd5-4c21-a4a4-a8645304e83f</a></p>
 
     <p>Pukukoodi on juhlapuku akateemisin kunniamerkein.</p>
