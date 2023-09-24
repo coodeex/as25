@@ -25,7 +25,8 @@ const Stimulaatio = () => {
 
     <p>Korkkaamme juhlan tyylikk&auml;&auml;sti cocktailtilaisuudella osoitteessa Tivolitie 10 klo 15 alkaen, jonka j&auml;lkeen juhlinta jatkuu loisteliaalla p&auml;&auml;juhlatilaisuudella Ravintola T&ouml;&ouml;l&ouml;ss&auml;. T&auml;m&auml;n j&auml;lkeen jatkoilla p&auml;&auml;see tanssimaan y&ouml;n pikkutunneille asti ja juhlinta jatkuu lauantaina 25.11. rentouttavan Stilliksen merkeiss&auml; Otakaari 20:ssa. Ilmoittautuminen on auki kutsuvieraille 11.9.-18.9.2022. ja avoin ilmoittautuminen 20.9.-30.9. 
     Itse ilmoittautuminen tapahtuu kide.app-sovelluksen kautta osoitteessa 
-    <a href='https://kide.app/events/b0e3f085-ccd5-4c21-a4a4-a8645304e83f' style={{textDecoration: "underline", color: '#baa5da'}}>https://kide.app/events/ac2cc150-3741-4bdb-adc9-a8605b4cdee9</a></p>
+    <a href='https://kide.app/events/b0e3f085-ccd5-4c21-a4a4-a8645304e83f' 
+    style={{textDecoration: "underline", color: '#baa5da'}}>https://kide.app/events/b0e3f085-ccd5-4c21-a4a4-a8645304e83f</a></p>
 
     <p>Pukukoodi on juhlapuku akateemisin kunniamerkein.</p>
 
@@ -47,7 +48,9 @@ const Stimulaatio = () => {
     
     <p> Registration is open for invited guests from 11.9.-18.9.2022. and open registration from 
       20.9.-30.9. Registration takes place via the kide.app at
-       <a href='https://kide.app/events/b0e3f085-ccd5-4c21-a4a4-a8645304e83f' style={{textDecoration: "underline", color: '#baa5da'}}>https://kide.app/events/ac2cc150-3741-4bdb-adc9-a8605b4cdee9</a>.</p>
+       <a href='https://kide.app/events/b0e3f085-ccd5-4c21-a4a4-a8645304e83f'
+        style={{textDecoration: "underline", color: '#baa5da'}}>
+          https://kide.app/events/b0e3f085-ccd5-4c21-a4a4-a8645304e83f</a>.</p>
     
     <p>The dress code is white tie with academic honorary badges.</p>
     
