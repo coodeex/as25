@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 import tter from '../../assets/images/companyLogos/tter_logo.svg';
 import aTalent from '../../assets/images/companyLogos/aTalent_Logo_Black.png'
-import testi2 from '../../assets/images/companyLogos/testi2.png';
-import testi3 from '../../assets/images/companyLogos/testi3.png';
+import sas from '../../assets/images/companyLogos/SAS_Logo_eng_5.png'
 
 const CompanyLogos = () => {
   return (
     <Container>
       <TitleText>Yhteistyökumppanit</TitleText>
       <LogoList>
-        <Logo src={tter} alt="testi1" style={{ width: '200px' }} />
-        <Logo src={aTalent} alt="testi1" style={{ height: '85px', width: '300px' }}/>
+        <Logo src={tter}  style={{ width: '200px' }} />
+        <Logo src={aTalent}  style={{ height: '85px', width: '300px' }}/>
+        <Logo src={sas}  style={{ width: '500px' }} />
       </LogoList>
     </Container>
   );
