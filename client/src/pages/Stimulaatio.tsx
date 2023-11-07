@@ -23,18 +23,44 @@ const Stimulaatio = () => {
     <SwitchButton onClick={() => switchLanguage()} style={{backgroundColor: '#5f3389', color: '#dfd4ee', borderColor: '#5c1a9b'}}>Switch to English</SwitchButton>
     <p>Tervetuloa juhlimaan 25-vuotiasta Automaatio- ja systeemitekniikan kiltaa Stimulaatioon perjantaina 24. marraskuuta 2023.</p>
 
-    <p>Korkkaamme juhlan tyylikk&auml;&auml;sti cocktailtilaisuudella osoitteessa Tivolitie 10 klo 15 alkaen, jonka j&auml;lkeen juhlinta jatkuu loisteliaalla p&auml;&auml;juhlatilaisuudella Ravintola T&ouml;&ouml;l&ouml;ss&auml;. T&auml;m&auml;n j&auml;lkeen jatkoilla p&auml;&auml;see tanssimaan y&ouml;n pikkutunneille asti ja juhlinta jatkuu lauantaina 25.11. rentouttavan Stilliksen merkeiss&auml; Otakaari 20:ssa. Ilmoittautuminen on auki kutsuvieraille 11.9.-18.9.2022. ja avoin ilmoittautuminen 20.9.-30.9. 
-    Itse ilmoittautuminen tapahtuu kide.app-sovelluksen kautta osoitteessa <a 
-    href='https://kide.app/events/b0e3f085-ccd5-4c21-a4a4-a8645304e83f' 
-    style={{textDecoration: "underline", color: '#baa5da'}} target="_blank">https://kide.app/events/b0e3f085-ccd5-4c21-a4a4-a8645304e83f</a></p>
-
-    <p>Pukukoodi on juhlapuku akateemisin kunniamerkein.</p>
-
-    <p>Illalliskortin hinta on opiskelijoille 100&euro; ja valmistuneille 120&euro;, Stilliksen hinta 15&euro;.</p>
-
+    <p>Korkkaamme juhlan tyylikk&auml;&auml;sti cocktailtilaisuudella osoitteessa Tivolitie 10 klo 15 alkaen, jonka j&auml;lkeen juhlinta jatkuu loisteliaalla p&auml;&auml;juhlatilaisuudella Ravintola T&ouml;&ouml;l&ouml;ss&auml;. T&auml;m&auml;n j&auml;lkeen jatkoilla p&auml;&auml;see tanssimaan y&ouml;n pikkutunneille asti ja juhlinta jatkuu lauantaina 25.11. rentouttavan Stilliksen merkeiss&auml; Otakaari 20:ssa. 
+    </p>
+    <h2 style={{color: '#baa5da'}}>Etiketti</h2>
+<h3 style={{color: '#baa5da'}}>Käytös</h3>
+<p>
+ 
+Vuosijuhlat ovat arvokas pöytäjuhla, jossa vierailta odotetaan hyviä pöytätapoja ja muiden vieraiden kunnioittamista. Ethän siis huutele kovaan ääneen, käytä puhelintasi koko aikaa ja kuuntelethan puheet ja mahdolliset esitykset keskeyttämättä ja häiritsemättä. 
+ 
+Laulujen ja puheiden aikana on myös kohteliasta olla syömättä ja juomatta. Vuosijuhlat eroavat teekkarisitseistä myös siten, että tilaisuuden aikana pidetään sitsitauko, jonka aikana voit käydä vierailemassa muissa pöydissä, puuteroimassa nenäsi tai vaikka suorittaa myöhäisillan bisnespuhelun. Kohteliasta on myös olla sammumatta pöytään juhlan aikana.
+ </p>
+<h3 style={{color: '#baa5da'}}>Juhlan kulku</h3>
+<p>
+ 
+Cocktail-tilaisuudessa eri kiltojen ja muiden yhteisöjen edustajat voivat antaa hallitukselle lahjan. Lahjan antajaksi ilmoittaudutaan jo itse juhlaan ilmoittautuessa ja lahjananto koskee lähinnä kutsuvieraita. Cocktail-tilaisuudesta siirrytään pääjuhlapaikalle yleensä bussikuljetuksella.
+ 
+Pääjuhlassa jokaiselle on oma paikkansa ja paikalta ei tule poistua juhlan aikana muuta kuin aivan välttämättömissä tapauksissa. On kohteliasta esittäytyä vieressä istuville henkilöille, jos et heitä tunne. Skoolausjärjestys on sama kuin sitseillä: ensin viistosti vasemmalla olevalle henkilölle, sitten viistosti oikealle ja vielä eteen.
+ 
+Vuosijuhlilla kuullaan muutamia puheita, ja niiden järjestys on yleensä esitetty pöydissä sijaitsevissa pöytäohjelmissa. Seremoniamestari ilmoittaa aina, kun jokin puhe tai muu tärkeä asia on alkamassa, jolloin on syytä hiljentyä kuuntelemaan.
+ 
+Vuosijuhlien ei ole tarkoitus olla pelkkää pönötystä ja juuri maalaisjärjellä ja hyviä käytöstapoja noudattamalla pärjää pitkälle! Vuosijuhlat ovat kuitenkin arvokas tapahtuma ja siksi koitetaan parhaamme mukaan kunnioittaa tapahtuman luonnetta.
+ 
+</p>
+<h2 style={{color: '#baa5da'}}>Dress Code</h2>
+<p>
+ 
+Pukukoodi vuosijuhlilla on yleensä juhlapuku, ja tämä voi tarkoittaa siis frakkia tai iltapukua. Pukukoodin voi tulkita itselle sopivalla tavalla, kunhan se on juhlava. Esimerkiksi frakin sijaan värikäs puku ei ole juhlava, mutta tumma puku on. Jos haluat pukea mekon, yleinen ohje iltapuvulle on pitkä. Pukukoodi ei kuitenkaan ole kiveen hakattu!
+ 
+</p>
+<h3 style={{color: '#baa5da'}}>Kunniamerkit ja nauhat</h3>
+<p>
+ 
+Eri järjestöillä ja killoilla voi olla omia kunnia-/ansiomerkkejään ja/tai nauhojaan. Kunniamerkillä tai nauhalla voi olla jokin oma käyttöohjesääntönsä, jonka todennäköisesti itse tiedät kun sellaisen saat.
+ 
+Yleisiä ohjeita nauhoille on, että kantajalla olisi hyvä olla rajoitettu nauhojen määrä maksimissaan kolmeen erilaiseen ja nauha ei saa koskettaa paljasta ihoa. Nauhan voi myös itse taiteilla rusetiksi, joka onkin iltapukujen kanssa yleensä helpompi ratkaisu. Jos sinulla on useampi nauha, joita kuuluu käyttää ylimpänä, et voi käyttää niitä samanaikaisesti. Nauhaa myös pidetään aina oikealta olkapäältä vasemmalle lantiolle.
+</p>
     <p>Mik&auml;li teill&auml; on kysymyksi&auml; tai muuta asiaa j&auml;rjest&auml;jille voitte ottaa yhteytt&auml; Stimulantteihin s&auml;hk&ouml;postitse stimulaatio@as.fi tai telegramissa @merisku ja @merinomainen.</p>
 
-    <p>N&auml;hd&auml;&auml;n marraskuussa!</p>
+    <p style={{color: '#baa5da'}}>N&auml;hd&auml;&auml;n marraskuussa!</p>
     </div>
     )
 
@@ -45,17 +71,7 @@ const Stimulaatio = () => {
     <p>Welcome to celebrate the 25th anniversary of the Guild of Automation and Systems Technology at Stimulaatio on Friday 24 November 2023.</p>
     
     <p>We will start off the celebrations in style with a cocktail party at Tivolitie 10 from 15:00, followed by a glamorous main event at Restaurant Töölö. Afterwards, you can dance the night away and the celebrations will continue on Saturday 25 November with a relaxing Styllis at Otakaari 20.</p>
-    
-    <p> Registration is open for invited guests from 11.9.-18.9.2022. and open registration from 
-      20.9.-30.9. Registration takes place via the kide.app at 
-       <a href='https://kide.app/events/b0e3f085-ccd5-4c21-a4a4-a8645304e83f'
-        style={{textDecoration: "underline", color: '#baa5da'}} target="_blank">
-          https://kide.app/events/b0e3f085-ccd5-4c21-a4a4-a8645304e83f</a>.</p>
-    
-    <p>The dress code is white tie with academic honorary badges.</p>
-    
-    <p>The price of the dinner ticket is 100&euro; for students and 120&euro; for graduates, with a style ticket for 15&euro;.</p>
-    
+
     <p>If you have any questions or other matters for the organizers, you can contact the Stimulants via e-mail stimulaatio@as.fi or telegram @merisku ja @merinomainen.</p>
     
     <p>See you in November!</p>
