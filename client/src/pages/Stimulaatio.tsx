@@ -74,7 +74,46 @@ Yleisiä ohjeita nauhoille on, että kantajalla olisi hyvä olla rajoitettu nauh
 
     <p>If you have any questions or other matters for the organizers, you can contact the Stimulants via e-mail stimulaatio@as.fi or telegram @merisku ja @merinomainen.</p>
     
-    <p>See you in November!</p>
+    <h2 style={{color: '#baa5da'}}>
+    Etiquette
+    </h2>
+<h3 style={{color: '#baa5da'}}>Conduct</h3>
+<p>
+ 
+An anniversary party is a dignified table celebration where good table manners and respect for other guests are expected. So please do not shout loudly, use your phone at all times and listen to speeches and any presentations without interruption or distraction. 
+ 
+It is also polite not to eat or drink during songs and speeches. An anniversary party also differs from normal sitsis in that there is a break during the ceremony, during which you can visit other tables, powder your nose or even make a late-night business call. It is also polite not to pass out at the table during the party.
+ 
+</p>
+<h3 style={{color: '#baa5da'}}>Party Schedule</h3>
+<p>
+ 
+At the cocktail reception, representatives from various guilds and other associations can give a gift to the board. The gift-giver is identified when registering for the party itself and the gift-giving is mainly for the invited guests. The cocktail party is usually followed by a shuttle bus to the main party venue.
+ 
+Everyone has a seat at the main party and should not leave during the party except in absolutely essential circumstances. It is polite to introduce yourself to the people sitting next to you if you do not know them. The order of stooling is the same as at a sitsis: first diagonally to the person on the left, then diagonally to the right and then to the front.
+ 
+There are a few speeches at the annual party, and the order of these is usually shown on the table programmes at the tables. The Master of Ceremonies always announces when a speech or other important matter is about to begin, at which point it is a good idea to stop and listen.
+ 
+An annual party is not meant to be a fuss and it is common sense and good manners that will take you a long way! However, it is a worthy event and so do your best to respect the nature of the event.
+ 
+
+</p>
+<h3 style={{color: '#baa5da'}}>Dress Code</h3>
+<p>
+ 
+The dress code for the annual party is usually formal attire, and this can mean a tailcoat or evening dress. The dress code can be interpreted in any way that suits you, as long as it is festive. For example, a colourful suit instead of a tails is not festive, but a dark suit is. If you want to wear a dress, the general pattern for an evening dress is long. However, the dress code is not set in stone!
+ 
+##### Decorations and ribbons
+</p>
+<h3 style={{color: '#baa5da'}}>Badges and Ribbons</h3>
+<p>
+ 
+Different organisations and guilds may have their own badges of honour/merit and/or ribbons. A badge or ribbon may have its own rules of use, which you will probably know when you receive it.
+ 
+General guidelines for ribbons are that the wearer should be limited to a maximum of three different ribbons and the ribbon should not touch bare skin. You can also make the ribbon yourself into a bow, which is usually easier with evening dresses. If you have more than one ribbon to wear on top, you cannot wear them at the same time. The ribbon is also always worn from the right shoulder to the left hip.
+
+    </p>
+    <p style={{color: '#baa5da'}}>See you in November!</p>
     </div>)
 
 
